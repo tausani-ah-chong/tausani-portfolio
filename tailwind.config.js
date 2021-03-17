@@ -22,6 +22,7 @@ module.exports = {
     },
     fontFamily: {
       serif: ['Merriweather', 'serif'],
+      mono: ['ui-monospace', 'monospace']
     },
     extend: {
       fontFamily: {
