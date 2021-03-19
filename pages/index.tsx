@@ -11,7 +11,7 @@ function HomePage(): JSX.Element {
 				<link href="/path/to/tailwind.css" rel="stylesheet" />
 				<title>Tausani Portfolio</title>
 			</Head>
-			<div className="max-w-xl mx-auto px-4 pt-10 pb-16 text-gray-700 font-sans">
+			<div className="max-w-xl mx-auto px-8 pt-10 pb-16 text-gray-700 font-sans">
 				<div className="flex justify-center">
 					<div className="px-4">
 						<Image
@@ -45,8 +45,8 @@ function HomePage(): JSX.Element {
 						</p>
 					</div>
 					<div>
-						<ul className="py-2">
-							<li className="py-2 list-disc text-lg">
+						<ul className="py-2 list-disc">
+							<li className="py-2 text-lg">
 								<a
 									className="hover:underline py-2 font-bold"
 									href="https://dev-portfolio-21.herokuapp.com"
