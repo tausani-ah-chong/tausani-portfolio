@@ -36,6 +36,8 @@ function HomePage(): JSX.Element {
 							just well-designed apps, but into ideas or tools that are meaningful to society.
 						</p>
 					</div>
+				</section>
+				<section>
 					<div>
 						<p
 							className="font-bold text-sm text-gray-600"
@@ -60,6 +62,64 @@ function HomePage(): JSX.Element {
 									with employers.
 								</p>
 								<p className="text-xs text-gray-600">March 19, 2021</p>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section>
+					<div>
+						<p
+							className="font-bold text-sm text-gray-600"
+							style={{ textTransform: 'uppercase', letterSpacing: '0.15em' }}
+						>
+							Contact
+						</p>
+					</div>
+					<div>
+						<ul className="py-2 list-disc">
+							<li className="py-2 text-lg">
+								<p className="font-bold">
+									Github:
+									<a
+										className="underline py-2 font-normal"
+										href="https://github.com/tausani-ah-chong"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										@tausani-ah-chong
+									</a>
+								</p>
+							</li>
+							<li className="py-2 text-lg">
+								<p className="font-bold">
+									Email: <span className="py-2 font-normal">tausani93@gmail.com</span>
+								</p>
+							</li>
+							<li className="py-2 text-lg">
+								<p className="font-bold">
+									Instagram:
+									<a
+										className="underline py-2 font-normal"
+										href="https://www.instagram.com/apollo_45k/"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										@apollo_45k
+									</a>
+								</p>
+							</li>
+							<li className="py-2 text-lg">
+								<p className="font-bold">
+									LinkedIn:
+									<a
+										className="underline py-2 font-normal"
+										href="https://www.linkedin.com/in/tausaniahchong/"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										@tausaniahchong
+									</a>
+								</p>
 							</li>
 						</ul>
 					</div>
