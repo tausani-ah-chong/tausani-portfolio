@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
 
 function HomePage(): JSX.Element {
 	return (
@@ -11,8 +10,8 @@ function HomePage(): JSX.Element {
 				<link href="/path/to/tailwind.css" rel="stylesheet" />
 				<title>Tausani Portfolio</title>
 			</Head>
-			<div className="max-w-xl mx-auto px-8 pt-10 pb-16 text-gray-700 font-sans">
-				<div className="flex justify-center">
+			<main className="max-w-xl mx-auto px-8 pt-10 pb-16 text-gray-700 font-sans">
+				<figure className="flex justify-center">
 					<div className="px-4">
 						<Image
 							className="rounded-full"
@@ -23,8 +22,8 @@ function HomePage(): JSX.Element {
 							quality="100"
 						></Image>
 					</div>
-				</div>
-				<section>
+				</figure>
+				<header>
 					<div className="pt-6">
 						<h1 className="text-left text-3xl font-bold">Tausani Ah Chong</h1>
 					</div>
@@ -36,7 +35,7 @@ function HomePage(): JSX.Element {
 							just well-designed apps, but into ideas or tools that are meaningful to society.
 						</p>
 					</div>
-				</section>
+				</header>
 				<section>
 					<div>
 						<p
@@ -66,7 +65,7 @@ function HomePage(): JSX.Element {
 						</ul>
 					</div>
 				</section>
-				<section>
+				<section className="pt-6">
 					<div>
 						<p
 							className="font-bold text-sm text-gray-600"
@@ -78,10 +77,10 @@ function HomePage(): JSX.Element {
 					<div>
 						<ul className="py-2 list-disc">
 							<li className="py-2 text-lg">
-								<p className="font-bold">
-									Github:
+								<p className="font-bold text-base">
+									Github:{' '}
 									<a
-										className="underline py-2 font-normal"
+										className="hover:bg-gray-100 underline py-2 font-normal"
 										href="https://github.com/tausani-ah-chong"
 										target="_blank"
 										rel="noopener noreferrer"
@@ -91,15 +90,15 @@ function HomePage(): JSX.Element {
 								</p>
 							</li>
 							<li className="py-2 text-lg">
-								<p className="font-bold">
+								<p className="font-bold text-base">
 									Email: <span className="py-2 font-normal">tausani93@gmail.com</span>
 								</p>
 							</li>
 							<li className="py-2 text-lg">
-								<p className="font-bold">
-									Instagram:
+								<p className="font-bold text-base">
+									Instagram:{' '}
 									<a
-										className="underline py-2 font-normal"
+										className="hover:bg-gray-100 underline py-2 font-normal"
 										href="https://www.instagram.com/apollo_45k/"
 										target="_blank"
 										rel="noopener noreferrer"
@@ -109,10 +108,10 @@ function HomePage(): JSX.Element {
 								</p>
 							</li>
 							<li className="py-2 text-lg">
-								<p className="font-bold">
-									LinkedIn:
+								<p className="font-bold text-base">
+									LinkedIn:{' '}
 									<a
-										className="underline py-2 font-normal"
+										className="hover:bg-gray-100 underline py-2 font-normal"
 										href="https://www.linkedin.com/in/tausaniahchong/"
 										target="_blank"
 										rel="noopener noreferrer"
@@ -124,7 +123,7 @@ function HomePage(): JSX.Element {
 						</ul>
 					</div>
 				</section>
-			</div>
+			</main>
 		</>
 	)
 }
