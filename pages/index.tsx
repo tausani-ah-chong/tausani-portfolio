@@ -57,11 +57,14 @@ function HomePage(): JSX.Element {
 								>
 									DevPortfolio
 								</a>
-								<p className="py-2 text-base">
-									WIP: A platform for developers to be able to showcase their portfolios and connect
-									with employers.
+								<p className="pb-2 text-sm italic">
+									WIP: Currently only responsive on laptops and bigger screens.
 								</p>
-								<p className="text-xs text-gray-600">March 19, 2021</p>
+								<p className="text-base">
+									A platform for developers to be able to showcase their portfolios and connect with
+									employers.
+								</p>
+								<p className="pt-2 text-xs text-gray-600">March 19, 2021</p>
 							</li>
 						</ul>
 					</div>
