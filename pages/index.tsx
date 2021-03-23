@@ -31,8 +31,9 @@ function HomePage(): JSX.Element {
 						<p className="py-8">
 							<span className="font-bold text-lg">Hello!</span> I&apos;m a Full Stack Software
 							Developer with a passion for taking a meaningful idea and bringing it to fruition. I’m
-							looking to be part of a team that I can grow with, that builds on ideas that are not
-							just well-designed apps, but into ideas or tools that are meaningful to society.
+							looking to be part of a team I can grow with, where we challenge each other to
+							improve. I want to work in a team where we create well-designed apps that are
+							meaningful to society, for now, and for future generations.
 						</p>
 					</div>
 				</header>
