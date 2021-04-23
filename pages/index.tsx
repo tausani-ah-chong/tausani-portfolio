@@ -63,7 +63,6 @@ function HomePage(): JSX.Element {
 									A platform for developers to be able to showcase their portfolios and connect with
 									employers.
 								</p>
-								<p className="pt-2 text-xs text-gray-600">March 19, 2021</p>
 							</li>
 						</ul>
 					</div>
@@ -120,6 +119,19 @@ function HomePage(): JSX.Element {
 										rel="noopener noreferrer"
 									>
 										@tausaniahchong
+									</a>
+								</p>
+							</li>
+							<li className="py-2 text-lg">
+								<p className="font-bold text-base">
+									Mobile:{' '}
+									<a
+										className="hover:bg-gray-100 underline py-2 font-normal"
+										href="#"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										+64224960891
 									</a>
 								</p>
 							</li>
