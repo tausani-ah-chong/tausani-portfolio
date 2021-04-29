@@ -4,7 +4,7 @@ Static personal portfolio thats shows my best work.
  
 Check it out here: https://tausani-portfolio.vercel.app/
 
-### Stack
+## Stack
 
 - NextJS
 - TypeScript
