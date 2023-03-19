@@ -27,11 +27,6 @@ const Contact: FunctionComponent = () => (
 				</li>
 				<li className="py-2 text-lg">
 					<p className="font-bold text-base">
-						Email: <span className="py-2 font-normal">tausani93@gmail.com</span>
-					</p>
-				</li>
-				<li className="py-2 text-lg">
-					<p className="font-bold text-base">
 						Instagram:{' '}
 						<a
 							className="hover:bg-gray-100 underline py-2 font-normal"
@@ -58,14 +53,14 @@ const Contact: FunctionComponent = () => (
 				</li>
 				<li className="py-2 text-lg">
 					<p className="font-bold text-base">
-						Mobile:{' '}
+						Twitter:{' '}
 						<a
 							className="hover:bg-gray-100 underline py-2 font-normal"
-							href="#"
+							href="https://twitter.com/tausani93"
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							+64224960891
+							@tausani93
 						</a>
 					</p>
 				</li>
