@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import Contact from './contact'
 import DigitalGarden from './digital-garden'
 import Projects from './projects'
@@ -35,10 +36,19 @@ function App(): JSX.Element {
 					</div>
 					<div>
 						<p className="py-8">
-							<span className="font-bold text-lg">Mālō!</span> I&apos;m a Full Stack Software
-							Engineer at Halter. I love working with a team I can grow with, where we challenge
-							each other to improve. I also strive to create well-designed apps & tools that are
-							meaningful to society, for now, and for future generations.
+							<span className="font-bold text-lg">Talofa!</span> I&apos;m a Junior Software Engineer
+							@{' '}
+							<Link href="https://halterhq.com" className="font-bold">
+								Halter
+							</Link>{' '}
+							shaping the future of dairy farming 🐄 I&apos;m a proud dad of 2 👨‍👩‍👧‍👦 Just over 18
+							months into coding, I transitioned from a music production background 🎹 to software
+							after a 15-week bootcamp @{' '}
+							<Link href="https://devacademy.co.nz" className="font-bold">
+								Dev Academy Aotearoa
+							</Link>
+							. In my spare time I&apos;m embracing the #BuildInPublic movement. Always keen to
+							learn and grow!
 						</p>
 					</div>
 				</header>

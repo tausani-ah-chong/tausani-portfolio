@@ -14,7 +14,7 @@ const Contact: FunctionComponent = () => (
 			<ul className="py-2 list-disc">
 				<li className="py-2 text-lg">
 					<p className="font-bold text-base">
-						Github:{' '}
+						GitHub:{' '}
 						<a
 							className="hover:bg-gray-100 underline py-2 font-normal"
 							href="https://github.com/tausani-ah-chong"
