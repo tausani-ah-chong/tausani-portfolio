@@ -18,13 +18,13 @@ const DigitalGarden: FunctionComponent = () => {
 				<div>
 					<ul className="py-2 list-disc">
 						<li className="py-2 text-lg">
-							<Link className="hover:underline py-2 font-bold" href="https://tausani.super.site/">
-								Learning to learn
+							<Link
+								className="hover:underline py-2 font-bold"
+								href="https://tausani.super.site/i-built-a-slack-chatgpt-bot"
+							>
+								I built a Slack ChatGPT Bot
 							</Link>
-							<p className="text-base">
-								2 hours studying !== 2 hours learning, why? Heres a few tips to make the most of
-								your study time.
-							</p>
+							<p className="text-base">A quick overview of how I built it 🚀</p>
 						</li>
 					</ul>
 				</div>
