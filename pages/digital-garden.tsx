@@ -14,7 +14,7 @@ const DigitalGarden: FunctionComponent = () => {
 					Digital Garden
 				</p>
 			</div>
-			{!Show ? (
+			{Show ? (
 				<div>
 					<ul className="py-2 list-disc">
 						<li className="py-2 text-lg">
