@@ -32,23 +32,27 @@ function App(): JSX.Element {
 				</figure>
 				<header>
 					<div className="pt-6">
-						<h1 className="text-left text-3xl font-bold">Tausani Ah Chong (He/Him)</h1>
+						<h1 className="text-left text-3xl font-bold">Tausani Ah Chong (He/Him) 🇼🇸 🇳🇿</h1>
 					</div>
 					<div>
 						<p className="py-8">
-							<span className="font-bold text-lg">Talofa!</span> I&apos;m a Junior Software Engineer
-							@{' '}
-							<Link href="https://halterhq.com" className="font-bold">
+							<span className="font-bold text-lg">Talofa! 👋</span>
+						</p>
+						<p className="pb-4">
+							I&apos;m a Junior Full-Stack Software Engineer @{' '}
+							<Link href="https://halterhq.com" className="font-bold underline">
 								Halter
 							</Link>{' '}
-							shaping the future of dairy farming 🐄 I&apos;m a proud dad of 2 👨‍👩‍👧‍👦 Just over 18
-							months into coding, I transitioned from a music production background 🎹 to software
-							after a 15-week bootcamp @{' '}
-							<Link href="https://devacademy.co.nz" className="font-bold">
-								Dev Academy Aotearoa
-							</Link>
-							. In my spare time I&apos;m embracing the #BuildInPublic movement. Always keen to
-							learn and grow!
+							shaping the future of dairy farming 🐄 from Aotearoa and beyond
+						</p>
+						<p className="pb-4">
+							I&apos;m a proud dad of two, 👨‍👩‍👧‍👦 and a curious tinkerer through the world of software
+							engineering. At Halter, I learnt to embrace quick releases, iterative processes, and
+							adaptability, all the while enhancing my frontend and more recently backend expertise.
+						</p>
+						<p className="pb-8">
+							In my spare time I&apos;m embracing the #BuildInPublic movement. Always keen to learn
+							and grow!
 						</p>
 					</div>
 				</header>
