@@ -39,16 +39,14 @@ function App(): JSX.Element {
 							<span className="font-bold text-lg">Talofa! 👋</span>
 						</p>
 						<p className="pb-4">
-							I&apos;m a Junior Full-Stack Software Engineer @{' '}
+							I&apos;m a Intermediate Full-Stack Software Engineer @{' '}
 							<Link href="https://halterhq.com" className="font-bold underline">
-								Halter
+								Vector ⚡️
 							</Link>{' '}
-							shaping the future of dairy farming 🐄 from Aotearoa and beyond
 						</p>
 						<p className="pb-4">
 							I&apos;m a proud dad of two, 👨‍👩‍👧‍👦 and a curious tinkerer through the world of software
-							engineering. At Halter, I learnt to embrace quick releases, iterative processes, and
-							adaptability, all the while enhancing my frontend and more recently backend expertise.
+							engineering.
 						</p>
 						<p className="pb-8">
 							In my spare time I&apos;m embracing the #BuildInPublic movement. Always keen to learn

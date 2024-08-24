@@ -20,6 +20,15 @@ const DigitalGarden: FunctionComponent = () => {
 						<li className="py-2 text-lg">
 							<Link
 								className="hover:underline py-2 font-bold"
+								href="https://tausani.super.site/malo-lava-lets-build-with-cursor-ai-code-editor"
+							>
+								Malo lava, let&apos;s build with Cursor — AI Code Editor ✨
+							</Link>
+							<p className="text-base">What's all the hype about?</p>
+						</li>
+						<li className="py-2 text-lg">
+							<Link
+								className="hover:underline py-2 font-bold"
 								href="https://tausani.super.site/i-built-a-slack-chatgpt-bot"
 							>
 								I built a Slack ChatGPT Bot
