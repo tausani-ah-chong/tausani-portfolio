@@ -24,7 +24,7 @@ const DigitalGarden: FunctionComponent = () => {
 							>
 								Malo lava, let&apos;s build with Cursor — AI Code Editor ✨
 							</Link>
-							<p className="text-base">What's all the hype about?</p>
+							<p className="text-base">What&apos;s all the hype about?</p>
 						</li>
 						<li className="py-2 text-lg">
 							<Link
