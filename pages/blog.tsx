@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { FunctionComponent } from 'react'
 
-const DigitalGarden: FunctionComponent = () => {
+const Blog: FunctionComponent = () => {
 	const Show = true
 
 	return (
@@ -11,7 +11,7 @@ const DigitalGarden: FunctionComponent = () => {
 					className="font-bold text-sm text-gray-600"
 					style={{ textTransform: 'uppercase', letterSpacing: '0.15em' }}
 				>
-					Digital Garden
+					Blog
 				</p>
 			</div>
 			{Show ? (
@@ -20,20 +20,28 @@ const DigitalGarden: FunctionComponent = () => {
 						<li className="py-2 text-lg">
 							<Link
 								className="hover:underline py-2 font-bold"
-								href="https://tausani.super.site/malo-lava-lets-build-with-cursor-ai-code-editor"
+								href="/blog/malo-lava-lets-build-with-cursor"
 							>
-								Malo lava, let&apos;s build with Cursor — AI Code Editor ✨
+								Malo lava, let&apos;s build with Cursor — AI Code Editor{' '}
+								<span role="img" aria-label="sparkles">
+									✨
+								</span>
 							</Link>
 							<p className="text-base">What&apos;s all the hype about?</p>
 						</li>
 						<li className="py-2 text-lg">
 							<Link
 								className="hover:underline py-2 font-bold"
-								href="https://tausani.super.site/i-built-a-slack-chatgpt-bot"
+								href="/blog/i-built-a-slack-chatgpt-bot"
 							>
 								I built a Slack ChatGPT Bot
 							</Link>
-							<p className="text-base">A quick overview of how I built it 🚀</p>
+							<p className="text-base">
+								A quick overview of how I built it{' '}
+								<span role="img" aria-label="rocket">
+									🚀
+								</span>
+							</p>
 						</li>
 					</ul>
 				</div>
@@ -44,4 +52,4 @@ const DigitalGarden: FunctionComponent = () => {
 	)
 }
 
-export default DigitalGarden
+export default Blog
