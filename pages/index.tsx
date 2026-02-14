@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import Contact from './contact'
-import DigitalGarden from './digital-garden'
+import Blog from './blog'
 import Projects from './projects'
 
 function App(): JSX.Element {
@@ -55,7 +55,7 @@ function App(): JSX.Element {
 					</div>
 				</header>
 				{showProjects && <Projects />}
-				<DigitalGarden />
+				<Blog />
 				<Contact />
 			</main>
 		</>
