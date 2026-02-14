@@ -22,7 +22,10 @@ const Blog: FunctionComponent = () => {
 								className="hover:underline py-2 font-bold"
 								href="/blog/malo-lava-lets-build-with-cursor"
 							>
-								Malo lava, let&apos;s build with Cursor — AI Code Editor ✨
+								Malo lava, let&apos;s build with Cursor — AI Code Editor{' '}
+								<span role="img" aria-label="sparkles">
+									✨
+								</span>
 							</Link>
 							<p className="text-base">What&apos;s all the hype about?</p>
 						</li>
@@ -33,7 +36,12 @@ const Blog: FunctionComponent = () => {
 							>
 								I built a Slack ChatGPT Bot
 							</Link>
-							<p className="text-base">A quick overview of how I built it 🚀</p>
+							<p className="text-base">
+								A quick overview of how I built it{' '}
+								<span role="img" aria-label="rocket">
+									🚀
+								</span>
+							</p>
 						</li>
 					</ul>
 				</div>
