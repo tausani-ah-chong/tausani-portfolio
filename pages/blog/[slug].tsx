@@ -6,6 +6,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import remarkBreaks from 'remark-breaks'
 import { ReactNode } from 'react'
 
 interface BlogPostProps {
@@ -72,14 +73,14 @@ export default function BlogPost({ title, date, content }: BlogPostProps): JSX.E
 			<Head>
 				<title>{title} | Tausani</title>
 			</Head>
-			<main className="max-w-xl mx-auto px-8 pt-10 pb-16 text-gray-700 font-sans">
+			<main className="max-w-3xl mx-auto px-8 pt-10 pb-16 text-gray-700 font-sans">
 				<Link href="/" className="text-sm text-gray-500 hover:underline">
 					&larr; Back home
 				</Link>
 				<article className="mt-6">
 					<h1 className="text-3xl font-bold mb-1">{title}</h1>
 					<p className="text-sm text-gray-400 mb-8">{date}</p>
-					<ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
+					<ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]} components={markdownComponents}>
 						{content}
 					</ReactMarkdown>
 				</article>
