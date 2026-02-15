@@ -1,5 +1,5 @@
 ---
-title: First Post 2026 -- Shipping Code Feels Safe, Sharing Opinions Feels Risky
+title: First Post 2026 —Shipping Code Feels Safe, Sharing Opinions Feels Risky
 date: February 16, 2026
 tags: Personal, Career
 ---
@@ -63,7 +63,7 @@ Sharing opinions about software feels risky.
 
 ---
 
-So here's the goal -- **1 post a week until my birthday in April.**
+So here's the goal —**1 post a week until my birthday in April.**
 
 **7 posts. 2 rules:**
 1. Make 7 posts.

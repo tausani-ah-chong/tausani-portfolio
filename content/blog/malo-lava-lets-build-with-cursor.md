@@ -1,5 +1,5 @@
 ---
-title: Malo lava, let's build with Cursor -- AI Code Editor
+title: Malo lava, let's build with Cursor —AI Code Editor
 date: August 24, 2024
 tags: AI
 ---
