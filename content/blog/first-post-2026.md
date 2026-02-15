@@ -9,7 +9,7 @@ Because I'm finally saying what I actually think. 👀
 
 **You know that whole, "know your strengths and weaknesses" thing?**
 Straight up, writing about Software actually scares me.
-I would hand brake and side step if I was to run it straight to writing (Imagine RunNation but for technical writing)
+I would hand brake and side step if I was to run it straight to writing (Imagine [RunNation](https://www.instagram.com/runnation/) but for technical writing)
 
 Take this:
 
