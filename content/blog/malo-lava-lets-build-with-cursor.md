@@ -16,7 +16,7 @@ tags: AI
 
 ******
 
-*Follow me on Instagram! [**@tausani93**](https://www.instagram.com/tausani93)*
+*Follow me on Instagram! [**@tausani.376**](https://www.instagram.com/tausani.376)*
 
  *GitHub: [https://github.com/tausani-ah-chong](https://github.com/tausani-ah-chong)*
 
@@ -250,7 +250,7 @@ Here are some changes I wanted to focus on for the first cut:
 
 ******
 
-*Follow me on Instagram! [**@tausani93**](https://www.instagram.com/tausani93)*
+*Follow me on Instagram! [**@tausani.376**](https://www.instagram.com/tausani.376)*
 
  *GitHub: [https://github.com/tausani-ah-chong](https://github.com/tausani-ah-chong)*
 
