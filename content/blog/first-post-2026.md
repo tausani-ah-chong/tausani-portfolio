@@ -4,6 +4,24 @@ date: February 16, 2026
 tags: Personal, Career
 ---
 
+******
+
+*🇼🇸 Talofa! O lo’u igoa o Tausani Ah Chong, e sau mai le nu’u o Puipa’a ma Avao*
+
+*📍 Central Tāmaki Makaurau, Aotearoa*
+
+*💼 Intermediate Software Developer @ Vector ⚡️*
+
+*👨‍👩‍👧‍👦 Proud dad of 2 kids*
+
+******
+
+*Follow me on Instagram! [**@tausani93**](https://www.instagram.com/tausani93)*
+
+*GitHub: [https://github.com/tausani-ah-chong](https://github.com/tausani-ah-chong)*
+
+******
+
 Ok I'm nervous my boss might read this.
 Because I'm finally saying what I actually think. 👀
 
