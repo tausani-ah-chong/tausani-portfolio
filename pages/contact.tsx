@@ -30,11 +30,11 @@ const Contact: FunctionComponent = () => (
 						Instagram:{' '}
 						<a
 							className="hover:bg-gray-100 underline py-2 font-normal"
-							href="https://www.instagram.com/tausani_mai_manu/"
+							href="https://www.instagram.com/tausani.376"
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							@tausani_mai_manu
+							@tausani.376
 						</a>
 					</p>
 				</li>

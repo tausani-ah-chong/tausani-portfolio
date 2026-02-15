@@ -1,8 +1,26 @@
 ---
-title: First Post 2026 -- Shipping Code Feels Safe, Sharing Opinions Feels Risky
+title: First Post 2026 —Shipping Code Feels Safe, Sharing Opinions Feels Risky
 date: February 16, 2026
 tags: Personal, Career
 ---
+
+******
+
+*🇼🇸 Talofa! O lo’u igoa o Tausani Ah Chong, e sau mai le nu’u o Puipa’a ma Avao*
+
+*📍 Central Tāmaki Makaurau, Aotearoa*
+
+*💼 Intermediate Software Developer @ Vector ⚡️*
+
+*👨‍👩‍👧‍👦 Proud dad of 2 kids*
+
+******
+
+*Follow me on Instagram! [**@tausani.376**](https://www.instagram.com/tausani.376)*
+
+*GitHub: [https://github.com/tausani-ah-chong](https://github.com/tausani-ah-chong)*
+
+******
 
 Ok I'm nervous my boss might read this.
 Because I'm finally saying what I actually think. 👀
@@ -45,7 +63,7 @@ Sharing opinions about software feels risky.
 
 ---
 
-So here's the goal -- **1 post a week until my birthday in April.**
+So here's the goal —**1 post a week until my birthday in April.**
 
 **7 posts. 2 rules:**
 1. Make 7 posts.
