@@ -96,7 +96,9 @@ export default function BlogPost({ title, date, tags, content }: BlogPostProps):
 								{tags.map((tag) => (
 									<span
 										key={tag}
-										className={`text-xs font-medium px-2 py-0.5 rounded-full ${tagColors[tag] || defaultTagColor}`}
+										className={`text-xs font-medium px-2 py-0.5 rounded-full ${
+											tagColors[tag] || defaultTagColor
+										}`}
 									>
 										{tag}
 									</span>
