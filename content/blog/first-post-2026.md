@@ -43,8 +43,9 @@ But this is part of being a great Engineer. You don't just ship. You explain *wh
 Shipping code feels safe to me.
 Sharing opinions about software feels risky.
 
-So here's the goal:
-**1 post a week until my birthday in April.**
+---
+
+So here's the goal -- **1 post a week until my birthday in April.**
 
 **7 posts. 2 rules:**
 1. Make 7 posts.
