@@ -19,6 +19,11 @@ module.exports = {
       blue: colors.lightBlue,
       red: colors.rose,
       pink: colors.fuchsia,
+      purple: colors.purple,
+      green: colors.green,
+      amber: colors.amber,
+      white: colors.white,
+      black: colors.black,
     },
     fontFamily: {
       serif: ['Merriweather', 'serif'],
