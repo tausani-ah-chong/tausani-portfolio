@@ -18,6 +18,12 @@ const Blog: FunctionComponent = () => {
 				<div>
 					<ul className="py-2 list-disc">
 						<li className="py-2 text-lg">
+							<Link className="hover:underline py-2 font-bold" href="/blog/first-post-2026">
+								First Post 2026 — Shipping Code Feels Safe, Sharing Opinions Feels Risky
+							</Link>
+							<p className="text-base">7 posts. 2 rules. Let&apos;s go.</p>
+						</li>
+						<li className="py-2 text-lg">
 							<Link
 								className="hover:underline py-2 font-bold"
 								href="/blog/malo-lava-lets-build-with-cursor"
