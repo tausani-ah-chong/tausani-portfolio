@@ -22,7 +22,7 @@ tags: Personal, Career
 
 ******
 
-Ok I'm nervous my boss might read this.
+Ok I'm nervous my managers might read this.
 Because I'm finally saying what I actually think. 👀
 
 **You know that whole, "know your strengths and weaknesses" thing?**
@@ -37,7 +37,7 @@ Me building software at speed, writing seki code, shipping features?
 Writing or getting asked about my honest thoughts and takes?
 **Yeah Nah.**
 
-If you've ever felt confident building but unsure explaining, then this might be for you.
+If you've ever felt confident building but can't fully express yourself, then this might be for you.
 
 This series of posts will be snapshots of the journey of how
 a half-caste Samoan,
@@ -63,10 +63,10 @@ Sharing opinions about software feels risky.
 
 ---
 
-So here's the goal —**1 post a week until my birthday in April.**
+So here's the goal. **1 post a week until my birthday in April.**
 
 **7 posts. 2 rules:**
 1. Make 7 posts.
 2. Make the last one better than the first.
 
-Let me know, does this count as 1/7? Or is this the prequel?
+Let me know, does this count as 1 of 7? Or is this the prequel?
