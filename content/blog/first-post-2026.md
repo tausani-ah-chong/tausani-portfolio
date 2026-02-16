@@ -1,5 +1,5 @@
 ---
-title: First Post 2026 —Shipping Code Feels Safe, Sharing Opinions Feels Risky
+title: First Post 2026 - Shipping Code Feels Safe, Sharing Opinions Feels Risky
 date: February 16, 2026
 tags: Personal, Career
 ---
