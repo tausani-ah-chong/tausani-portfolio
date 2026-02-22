@@ -158,7 +158,7 @@ Because the full suite of tests was created upfront, this was closer to Spec-Dri
 
 ---
 
-## So Who Won?
+## So, Did We Actually Increase Determinism?
 
 ![Side-by-side comparison of test counts and coverage across approaches](/blog/tdd-or-just-tests/tdd-comparison.png)
 
@@ -180,6 +180,8 @@ No tests          Tests exist (unverified process)       Tests + verified proces
 
 Without guardrails, the LLM's implementation strategy is entirely non-deterministic. SCRYPT vs SHA256, class vs function, sync vs async are all free choices with no specification to anchor them. With prompt-only TDD, the tests specify behaviour, but the process could vary between runs. With hook or agent enforcement, every step is constrained. The failing test at each phase narrows the next implementation decision, pushing toward convergence across runs.
 
+We also saw this play out in a concrete way: the unconstrained approaches added methods that weren't part of the original prompt. Extra helpers, convenience functions, things the model decided were useful on its own. In some ways, that's the upside of non-determinism, like a colleague who went above and beyond and took initiative. But is that what you want all the time? Probably not. That's ultimately up to whoever's in the driver's seat.
+
 ### When to use what
 
 If you're just vibe-coding a prototype, skip TDD. If you already have a clear mental model of the interface and just want it tested, prompt-only TDD is probably good enough.
@@ -196,7 +198,7 @@ The possibilities are endless if you go full custom agent, which sounds like a v
 
 ## What I Took Away
 
-At the end of the day, I won, not because I built a better coding agent than Anthropic or OpenAI (one dev and a weekend vs full teams working full-time), but because I got my hands dirty and came out with real learnings. The custom TDD agent flow could genuinely be its own product, with a proper UI and UX for reviewing each TDD cycle. I have more ideas now than I did before I started.
+I think we achieved it. The enforcement approaches (the custom agent and the hooks) demonstrably constrained the model's freedom at each step, and that's exactly what determinism is about: narrowing the space of possible outputs. Did both runs produce identical code? No. But they converged on the same structure, same coverage, same process. That's meaningful. The custom TDD agent flow could genuinely be its own product, with a proper UI and UX for reviewing each TDD cycle. I have more ideas now than I did before I started.
 
 That's the move: start building, and let the experiments teach you.
 
