@@ -1,10 +1,10 @@
 ---
 title: TDD or Just Tests? What I Learned Building a TDD Agent in a Weekend
-date: February 22, 2026
+date: February 23, 2026
 tags: AI, TDD
 ---
 
-Being a parent but also a software engineer learning about AI, the kagamea (clothes washing) doesn't stop, a'e sele 😆, but what I love about folding time is chucking on a podcast. That's when I had my most recent aha moment, the one that made LLMs and agents finally click for me.
+Being a parent but also a software engineer learning about AI, the kagamea (clothes washing) doesn't stop, a'e sele 😆 but what I love about folding time is chucking on a podcast. That's when I had my most recent aha moment, the one that made LLMs and agents finally click for me.
 
 ## The Aha Moment
 
@@ -24,7 +24,7 @@ But now? Now we have non-deterministic systems, LLMs, directly writing our deter
 
 Non-determinism is where LLMs shine. It's a quality we humans share: same input, and the output can vary each time. It's why ChatGPT, Claude, and other LLMs can sound so human.
 
-But software demands strict determinism: same input → same output, every time. That's how we get predictable, trustworthy behaviour.
+But *some* software demands strict determinism: same input → same output, every time. That's how we get predictable, trustworthy behaviour.
 
 When we use tools like Claude Code and Codex, we're trading some of that predictability for speed and output. And when you have critical software that must behave predictably, that trade-off becomes the biggest risk in the room.
 
@@ -40,6 +40,8 @@ Their full document is worth reading, but the line that piqued my interest was:
 I decided I wanted to tackle the **tests** part, specifically with Test-Driven Development (TDD).
 
 ## Can TDD Increase Determinism?
+
+![Comparison of all four TDD approaches across prompt, mechanism, tests generated, coverage, process verification, and audit trail](/blog/tdd-or-just-tests/tdd-cycle.svg)
 
 This weekend I took Claude Code for a drive to see how much we can influence LLM outputs. Can TDD act as a guardrail that pushes AI-generated code toward more predictable, deterministic behaviour?
 
@@ -59,6 +61,8 @@ The agent wraps the Claude API directly and enforces strict red-green-refactor t
 
 It got me thinking: what should the user experience be when you're getting an LLM to do TDD? Should the user be in the driver's seat approving each cycle? Or fully commit and wait for the PR? That question led me to build history and snapshots of files during each cycle, a frame-by-frame replay of the TDD loop that's invaluable for review.
 
+Every file write is archived in `sandbox/history/{runId}/iteration-{n}-{phase}-{filename}`. This gives a complete frame-by-frame replay of the TDD loop
+
 The biggest downside is the lack of full capabilities like directory traversal, things Claude Code handles natively. But it's custom, and with more time you could craft a very focused TDD-style user experience.
 
 ![tdd-agent running the red-green-refactor loop](/blog/tdd-or-just-tests/tdd-agent-demo.gif)
@@ -77,7 +81,38 @@ This creates an enforcement loop that Claude Code shouldn't be allowed to bypass
 
 The trade-off: no audit trail or cycle snapshots, and hooks verify test existence and pass/fail state, not test quality.
 
-**Source code:** [tdd-hooks](https://github.com/tausani-ah-chong/tdd-hooks)
+Below is what `settings.json` looks like to configure hooks
+
+```json
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "tsx .claude/hooks/tdd-pre.ts"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "tsx .claude/hooks/tdd-post.ts"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+**Source code:** [tdd-hooks](https://github.com/tausani-ah-chong/tdd-hooks/tree/main/.claude/hooks)
 
 ---
 
@@ -105,7 +140,7 @@ Because the full suite of tests was created upfront, this was closer to Spec-Dri
 
 ## So Who Won?
 
-![Comparison of all four TDD approaches across prompt, mechanism, tests generated, coverage, process verification, and audit trail](/blog/tdd-or-just-tests/tdd-cycle.svg)
+![Side-by-side comparison of test counts and coverage across approaches](/blog/tdd-or-just-tests/tdd-comparison.png)
 
 ### The one-`it()`-at-a-time constraint is everything
 
@@ -117,13 +152,11 @@ The real argument for TDD with AI isn't just about discipline, it's that the one
 
 Think of it as a spectrum of enforcement strength:
 
-```
+```text
 No tests          Tests exist (unverified process)       Tests + verified process
     |                          |                                |
  no-hooks              tdd-prompt-only                tdd-hooks / tdd-agent
 ```
-
-![Side-by-side comparison of test counts and coverage across approaches](/blog/tdd-or-just-tests/tdd-comparison.png)
 
 Without guardrails, the LLM's implementation strategy is entirely non-deterministic. SCRYPT vs SHA256, class vs function, sync vs async are all free choices with no specification to anchor them. With prompt-only TDD, the tests specify behaviour, but the process could vary between runs. With hook or agent enforcement, every step is constrained. The failing test at each phase narrows the next implementation decision, pushing toward convergence across runs.
 
@@ -145,4 +178,4 @@ The possibilities are endless if you go full custom agent, which sounds like a v
 
 At the end of the day, I won, not because I built a better coding agent than Anthropic or OpenAI (one dev and a weekend vs full teams working full-time), but because I got my hands dirty and came out with real learnings. The custom TDD agent flow could genuinely be its own product, with a proper UI and UX for reviewing each TDD cycle. I have more ideas now than I did before I started.
 
-That's the move: stop waiting, start building, and let the experiments teach you.
+That's the move: start building, and let the experiments teach you.

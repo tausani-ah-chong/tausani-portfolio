@@ -81,7 +81,7 @@ export default function BlogPost({ title, date, tags, content }: BlogPostProps):
 	return (
 		<>
 			<Head>
-				<title>{title} | Tausani</title>
+				<title>{`${title} | Tausani`}</title>
 			</Head>
 			<main className="max-w-3xl mx-auto px-8 pt-10 pb-16 text-gray-700 font-sans">
 				<Link href="/" className="text-sm text-gray-500 hover:underline">
