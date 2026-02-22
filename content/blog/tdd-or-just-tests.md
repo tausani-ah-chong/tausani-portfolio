@@ -4,6 +4,24 @@ date: February 23, 2026
 tags: AI, TDD
 ---
 
+******
+
+*🇼🇸 Talofa! O lo’u igoa o Tausani Ah Chong, e sau mai le nu’u o Puipa’a ma Avao*
+
+*📍 Central Tāmaki Makaurau, Aotearoa*
+
+*💼 Intermediate Software Developer @ Vector ⚡️*
+
+*👨‍👩‍👧‍👦 Proud dad of 2 kids*
+
+******
+
+*Follow me on Instagram! [**@tausani.376**](https://www.instagram.com/tausani.376)*
+
+*GitHub: [https://github.com/tausani-ah-chong](https://github.com/tausani-ah-chong)*
+
+******
+
 Being a parent but also a software engineer learning about AI, the kagamea (clothes washing) doesn't stop, a'e sele 😆 but what I love about folding time is chucking on a podcast. That's when I had my most recent aha moment, the one that made LLMs and agents finally click for me.
 
 ## The Aha Moment
