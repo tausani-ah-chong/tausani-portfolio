@@ -14,6 +14,8 @@ tags: AI, TDD
 
 *👨‍👩‍👧‍👦 Proud dad of 2 kids*
 
+*📝 Post #2 - Posting every week until my birthday in April 🎂*
+
 ******
 
 *Follow me on Instagram! [**@tausani.376**](https://www.instagram.com/tausani.376)*
@@ -184,7 +186,7 @@ If you're just vibe-coding a prototype, skip TDD. If you already have a clear me
 
 But if you have critical software where mistakes are expensive, or complex domain logic where the design needs to emerge test-by-test, that's where enforced TDD pays for itself.
 
-Claude hooks are the practical middle ground. They enforce the process mechanically without requiring developers to trust the model's self-reporting, and they scale to any project without custom infrastructure. With the downside that you're locked in to only using Anthropic models and agents. After a quick search not even Codex has this feature, it was actually a blocked PR from OpenAI.
+Claude hooks are the practical middle ground. They enforce the process mechanically without requiring developers to trust the model's self-reporting, and they scale to any project without custom infrastructure. With the downside that you're locked in to only using Anthropic models and agents. After a quick search not even Codex has this feature, it was actually a [rejected PR from OpenAI](https://github.com/openai/codex/pull/2904).
 
 The core finding in one sentence: **prompt-only TDD gets you a tested codebase; enforced TDD gets you a codebase that was built by tests, and only the enforcement approaches can prove the difference.**
 
@@ -197,3 +199,9 @@ The possibilities are endless if you go full custom agent, which sounds like a v
 At the end of the day, I won, not because I built a better coding agent than Anthropic or OpenAI (one dev and a weekend vs full teams working full-time), but because I got my hands dirty and came out with real learnings. The custom TDD agent flow could genuinely be its own product, with a proper UI and UX for reviewing each TDD cycle. I have more ideas now than I did before I started.
 
 That's the move: start building, and let the experiments teach you.
+
+---
+
+*Thanks for reading! If you enjoyed this, follow me on Instagram [**@tausani.376**](https://www.instagram.com/tausani.376) and connect with me on LinkedIn [**Tausani Ah Chong**](https://www.linkedin.com/in/tausaniahchong).*
+
+*I'm posting every week until my birthday in April - tune in for the next one!*
