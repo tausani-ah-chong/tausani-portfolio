@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <filter id="shadow-sm" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="10" flood-color="#94a3b8" flood-opacity="0.15"/>
+    </filter>
+    <filter id="shadow-lg" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="24" flood-color="#94a3b8" flood-opacity="0.2"/>
+    </filter>
+    
+    <style>
+      text {
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        text-anchor: middle;
+      }
+      .arc {
+        stroke-dasharray: 315 1010;
+        transform-origin: 250px 250px;
+      }
+      .arc1 { transform: rotate(-90deg); animation: drawArc1 7.5s infinite ease-in-out; }
+      .arc2 { transform: rotate(30deg);  animation: drawArc2 7.5s infinite ease-in-out; }
+      .arc3 { transform: rotate(150deg); animation: drawArc3 7.5s infinite ease-in-out; }
+
+      .step {
+        transform-origin: 250px 250px;
+      }
+      .step1 { animation: showStep1 7.5s infinite cubic-bezier(0.4, 0, 0.2, 1); }
+      .step2 { animation: showStep2 7.5s infinite cubic-bezier(0.4, 0, 0.2, 1); }
+      .step3 { animation: showStep3 7.5s infinite cubic-bezier(0.4, 0, 0.2, 1); }
+
+      .center-bg {
+        animation: centerBg 7.5s infinite ease-in-out;
+      }
+
+      @keyframes drawArc1 {
+        0%   { stroke-dashoffset: 315; opacity: 1; }
+        8%   { stroke-dashoffset: 0;   opacity: 1; }
+        90%  { stroke-dashoffset: 0;   opacity: 1; }
+        95%  { stroke-dashoffset: 0;   opacity: 0; }
+        100% { stroke-dashoffset: 315; opacity: 0; }
+      }
+      @keyframes drawArc2 {
+        0%   { stroke-dashoffset: 315; opacity: 1; }
+        33%  { stroke-dashoffset: 315; opacity: 1; }
+        41%  { stroke-dashoffset: 0;   opacity: 1; }
+        90%  { stroke-dashoffset: 0;   opacity: 1; }
+        95%  { stroke-dashoffset: 0;   opacity: 0; }
+        100% { stroke-dashoffset: 315; opacity: 0; }
+      }
+      @keyframes drawArc3 {
+        0%   { stroke-dashoffset: 315; opacity: 1; }
+        66%  { stroke-dashoffset: 315; opacity: 1; }
+        74%  { stroke-dashoffset: 0;   opacity: 1; }
+        90%  { stroke-dashoffset: 0;   opacity: 1; }
+        95%  { stroke-dashoffset: 0;   opacity: 0; }
+        100% { stroke-dashoffset: 315; opacity: 0; }
+      }
+
+      @keyframes showStep1 {
+        0%   { opacity: 0; transform: translateY(15px); }
+        5%   { opacity: 1; transform: translateY(0); }
+        28%  { opacity: 1; transform: translateY(0); }
+        33%  { opacity: 0; transform: translateY(-15px); }
+        100% { opacity: 0; transform: translateY(-15px); }
+      }
+      @keyframes showStep2 {
+        0%   { opacity: 0; transform: translateY(15px); }
+        33%  { opacity: 0; transform: translateY(15px); }
+        38%  { opacity: 1; transform: translateY(0); }
+        61%  { opacity: 1; transform: translateY(0); }
+        66%  { opacity: 0; transform: translateY(-15px); }
+        100% { opacity: 0; transform: translateY(-15px); }
+      }
+      @keyframes showStep3 {
+        0%   { opacity: 0; transform: translateY(15px); }
+        66%  { opacity: 0; transform: translateY(15px); }
+        71%  { opacity: 1; transform: translateY(0); }
+        90%  { opacity: 1; transform: translateY(0); }
+        95%  { opacity: 0; transform: translateY(-15px); }
+        100% { opacity: 0; transform: translateY(-15px); }
+      }
+
+      @keyframes centerBg {
+        0%   { fill: #FFF1F2; }
+        28%  { fill: #FFF1F2; }
+        33%  { fill: #F0F9FF; }
+        61%  { fill: #F0F9FF; }
+        66%  { fill: #F0FDF4; }
+        90%  { fill: #F0FDF4; }
+        95%  { fill: #FFF1F2; }
+        100% { fill: #FFF1F2; }
+      }
+    </style>
+  </defs>
+
+  <rect width="500" height="500" fill="#f8fafc"/>
+  
+  <rect x="25" y="25" width="450" height="450" rx="40" fill="#ffffff" filter="url(#shadow-lg)"/>
+
+  <circle cx="250" cy="250" r="160" fill="none" stroke="#f1f5f9" stroke-width="22" />
+
+  <circle cx="250" cy="250" r="160" fill="none" stroke="#FDA4AF" stroke-width="22" stroke-linecap="round" class="arc arc1" />
+  
+  <circle cx="250" cy="250" r="160" fill="none" stroke="#7DD3FC" stroke-width="22" stroke-linecap="round" class="arc arc2" />
+  
+  <circle cx="250" cy="250" r="160" fill="none" stroke="#86EFAC" stroke-width="22" stroke-linecap="round" class="arc arc3" />
+
+  <circle cx="250" cy="250" r="115" class="center-bg" filter="url(#shadow-sm)"/>
+
+  <g class="step step1">
+    <path d="M232 178 L268 214 M268 178 L232 214" fill="none" stroke="#E11D48" stroke-width="8" stroke-linecap="round"/>
+    <text x="250" y="255" fill="#9F1239" font-weight="800" font-size="28" letter-spacing="1.5">FAIL</text>
+    <text x="250" y="280" fill="#E11D48" font-size="15" font-weight="500">Write failing test</text>
+  </g>
+
+  <g class="step step2">
+    <path d="M228 175 L208 195 L228 215 M272 175 L292 195 L272 215 M256 165 L244 225" fill="none" stroke="#0284C7" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="250" y="255" fill="#075985" font-weight="800" font-size="28" letter-spacing="1.5">CODE</text>
+    <text x="250" y="280" fill="#0284C7" font-size="15" font-weight="500">Make the test pass</text>
+  </g>
+
+  <g class="step step3">
+    <path d="M222 195 L242 215 L278 175" fill="none" stroke="#16A34A" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="250" y="255" fill="#166534" font-weight="800" font-size="28" letter-spacing="1.5">GREEN</text>
+    <text x="250" y="280" fill="#16A34A" font-size="15" font-weight="500">Pass &amp; refactor</text>
+  </g>
+</svg>

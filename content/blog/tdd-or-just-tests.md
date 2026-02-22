@@ -4,8 +4,6 @@ date: February 22, 2026
 tags: AI, TDD
 ---
 
-# TDD or Just Tests? What I Learned Building a TDD Agent in a Weekend
-
 Being a parent but also a software engineer learning about AI, the kagamea (clothes washing) doesn't stop, a'e sele 😆, but what I love about folding time is chucking on a podcast. That's when I had my most recent aha moment, the one that made LLMs and agents finally click for me.
 
 ## The Aha Moment
@@ -63,6 +61,8 @@ It got me thinking: what should the user experience be when you're getting an LL
 
 The biggest downside is the lack of full capabilities like directory traversal, things Claude Code handles natively. But it's custom, and with more time you could craft a very focused TDD-style user experience.
 
+![tdd-agent running the red-green-refactor loop](/blog/tdd-or-just-tests/tdd-agent-demo.gif)
+
 **Source code:** [tdd-agent](https://github.com/tausani-ah-chong/tdd-agent)
 
 ---
@@ -105,6 +105,8 @@ Because the full suite of tests was created upfront, this was closer to Spec-Dri
 
 ## So Who Won?
 
+![Comparison of all four TDD approaches across prompt, mechanism, tests generated, coverage, process verification, and audit trail](/blog/tdd-or-just-tests/tdd-cycle.svg)
+
 ### The one-`it()`-at-a-time constraint is everything
 
 This is what separates TDD from SDD. The custom agent enforces it explicitly, "add exactly ONE new `it()`." Hooks enforce it implicitly, the post-hook runs tests after each write, so Claude learns to write one test and get it green before writing the next. The prompt-only approach gets the file ordering right but misses the granularity, and that's why it produced 29 tests to the enforcement approaches' 13. More tests, but less discipline. Claude planned the full suite as a spec, then implemented against it in one go.
@@ -120,6 +122,8 @@ No tests          Tests exist (unverified process)       Tests + verified proces
     |                          |                                |
  no-hooks              tdd-prompt-only                tdd-hooks / tdd-agent
 ```
+
+![Side-by-side comparison of test counts and coverage across approaches](/blog/tdd-or-just-tests/tdd-comparison.png)
 
 Without guardrails, the LLM's implementation strategy is entirely non-deterministic. SCRYPT vs SHA256, class vs function, sync vs async are all free choices with no specification to anchor them. With prompt-only TDD, the tests specify behaviour, but the process could vary between runs. With hook or agent enforcement, every step is constrained. The failing test at each phase narrows the next implementation decision, pushing toward convergence across runs.
 
