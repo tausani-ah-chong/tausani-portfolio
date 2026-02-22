@@ -158,7 +158,7 @@ Because the full suite of tests was created upfront, this was closer to Spec-Dri
 
 ---
 
-## So Who Won?
+## So, Did We Actually Increase Determinism?
 
 ![Side-by-side comparison of test counts and coverage across approaches](/blog/tdd-or-just-tests/tdd-comparison.png)
 
@@ -196,7 +196,7 @@ The possibilities are endless if you go full custom agent, which sounds like a v
 
 ## What I Took Away
 
-At the end of the day, I won, not because I built a better coding agent than Anthropic or OpenAI (one dev and a weekend vs full teams working full-time), but because I got my hands dirty and came out with real learnings. The custom TDD agent flow could genuinely be its own product, with a proper UI and UX for reviewing each TDD cycle. I have more ideas now than I did before I started.
+I think we achieved it. The enforcement approaches — the custom agent and the hooks — demonstrably constrained the model's freedom at each step, and that's exactly what determinism is about: narrowing the space of possible outputs. Did both runs produce identical code? No. But they converged on the same structure, same coverage, same process. That's meaningful. The custom TDD agent flow could genuinely be its own product, with a proper UI and UX for reviewing each TDD cycle. I have more ideas now than I did before I started.
 
 That's the move: start building, and let the experiments teach you.
 
