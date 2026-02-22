@@ -180,6 +180,8 @@ No tests          Tests exist (unverified process)       Tests + verified proces
 
 Without guardrails, the LLM's implementation strategy is entirely non-deterministic. SCRYPT vs SHA256, class vs function, sync vs async are all free choices with no specification to anchor them. With prompt-only TDD, the tests specify behaviour, but the process could vary between runs. With hook or agent enforcement, every step is constrained. The failing test at each phase narrows the next implementation decision, pushing toward convergence across runs.
 
+We also saw this play out in a concrete way: the unconstrained approaches added methods that weren't part of the original prompt. Extra helpers, convenience functions, things the model decided were useful on its own. In some ways, that's the upside of non-determinism, like a colleague who went above and beyond and took initiative. But is that what you want all the time? Probably not. That's ultimately up to whoever's in the driver's seat.
+
 ### When to use what
 
 If you're just vibe-coding a prototype, skip TDD. If you already have a clear mental model of the interface and just want it tested, prompt-only TDD is probably good enough.
