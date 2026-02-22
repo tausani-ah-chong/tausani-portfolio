@@ -186,7 +186,7 @@ If you're just vibe-coding a prototype, skip TDD. If you already have a clear me
 
 But if you have critical software where mistakes are expensive, or complex domain logic where the design needs to emerge test-by-test, that's where enforced TDD pays for itself.
 
-Claude hooks are the practical middle ground. They enforce the process mechanically without requiring developers to trust the model's self-reporting, and they scale to any project without custom infrastructure. With the downside that you're locked in to only using Anthropic models and agents. After a quick search not even Codex has this feature, it was actually a blocked PR from OpenAI.
+Claude hooks are the practical middle ground. They enforce the process mechanically without requiring developers to trust the model's self-reporting, and they scale to any project without custom infrastructure. With the downside that you're locked in to only using Anthropic models and agents. After a quick search not even Codex has this feature, it was actually a [rejected PR from OpenAI](https://github.com/openai/codex/pull/2904).
 
 The core finding in one sentence: **prompt-only TDD gets you a tested codebase; enforced TDD gets you a codebase that was built by tests, and only the enforcement approaches can prove the difference.**
 
