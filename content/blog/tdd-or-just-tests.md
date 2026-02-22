@@ -14,6 +14,8 @@ tags: AI, TDD
 
 *👨‍👩‍👧‍👦 Proud dad of 2 kids*
 
+*📝 Post #2 — Posting every week until my birthday in April 🎂*
+
 ******
 
 *Follow me on Instagram! [**@tausani.376**](https://www.instagram.com/tausani.376)*
@@ -197,3 +199,9 @@ The possibilities are endless if you go full custom agent, which sounds like a v
 At the end of the day, I won, not because I built a better coding agent than Anthropic or OpenAI (one dev and a weekend vs full teams working full-time), but because I got my hands dirty and came out with real learnings. The custom TDD agent flow could genuinely be its own product, with a proper UI and UX for reviewing each TDD cycle. I have more ideas now than I did before I started.
 
 That's the move: start building, and let the experiments teach you.
+
+---
+
+*Thanks for reading! If you enjoyed this, follow me on Instagram [**@tausani.376**](https://www.instagram.com/tausani.376) and connect with me on LinkedIn [**Tausani Ah Chong**](https://www.linkedin.com/in/tausani-ah-chong/).*
+
+*I'm posting every week until my birthday in April — tune in for the next one!*
