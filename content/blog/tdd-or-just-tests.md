@@ -14,7 +14,7 @@ tags: AI, TDD
 
 *👨‍👩‍👧‍👦 Proud dad of 2 kids*
 
-*📝 Post #2 — Posting every week until my birthday in April 🎂*
+*📝 Post #2 - Posting every week until my birthday in April 🎂*
 
 ******
 
@@ -204,4 +204,4 @@ That's the move: start building, and let the experiments teach you.
 
 *Thanks for reading! If you enjoyed this, follow me on Instagram [**@tausani.376**](https://www.instagram.com/tausani.376) and connect with me on LinkedIn [**Tausani Ah Chong**](https://www.linkedin.com/in/tausaniahchong).*
 
-*I'm posting every week until my birthday in April — tune in for the next one!*
+*I'm posting every week until my birthday in April - tune in for the next one!*
