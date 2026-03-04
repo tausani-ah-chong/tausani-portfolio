@@ -18,6 +18,18 @@ const Blog: FunctionComponent = () => {
 				<div>
 					<ul className="py-2 list-disc">
 						<li className="py-2 text-lg">
+							<Link
+								className="hover:underline py-2 font-bold"
+								href="/blog/genuine-in-a-world-of-generated-content"
+							>
+								Genuine in a World of Generated Content
+							</Link>
+							<p className="text-base">
+								On AI writing, local Whisper models, and why being intentional beats letting AI
+								improvise.
+							</p>
+						</li>
+						<li className="py-2 text-lg">
 							<Link className="hover:underline py-2 font-bold" href="/blog/tdd-or-just-tests">
 								TDD or Just Tests? What I Learned Building a TDD Agent in a Weekend
 							</Link>
