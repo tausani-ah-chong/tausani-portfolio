@@ -24,7 +24,13 @@ tags: Personal, AI
 
 ******
 
-Ok I kind of lied to you in my [previous post](/blog/tdd-or-just-tests) and I apologise. So I thought you know writing these posts would be a breeze now because there are many AI tools to help you write (even before we had grammarly). Ok so here we go — my previous post was edited and some parts written by AI.
+Ok I kind of lied to you in my [previous post](/blog/tdd-or-just-tests) and I apologise
+
+So I thought you know writing these posts would be a breeze now because there are many AI tools to help you write, (even before we had grammarly)
+
+Ok so here we go,
+
+my previous post was edited and some parts written by AI
 
 whoopty doo right? Everything is written or thrown over to AI to improvise these days, but should everything?
 
@@ -34,7 +40,7 @@ In a world now where we have flooded the internet with AI generated content, we 
 
 I think this might be one of the few last frontiers, one of the last things we have, to be as genuine as we can online (apart from things like music and livestreamed content).
 
-> **I can honestly say AI didn't write or help edit this for me. You are reading my thoughts directly from me, as raw as they are — you can't get much more human and genuine than that.**
+I can honestly say AI didn't write or help edit this for me. You are reading my thoughts directly from me, as raw as they are, you can't get much more human and genuine than that.
 
 ## A Story from Outside My Day Job
 
@@ -50,7 +56,7 @@ So I thought what about using an AI tool that runs on my local machine and never
 
 I researched and ended up finding a [Whisper port](https://github.com/ggerganov/whisper.cpp), based off the O\*\*\*AI (The company who should not be named iykyk) model but ported to C++ for better performance. Did a couple manual tests beforehand with random audio and thought I would try it with a real meeting. So before our meeting, I asked for permission first if I could record and feed into my local AI tool. I then dumped the 1 hour .wav file into the tool and let it do its thing.
 
-I got to test a few different models that you could download that works with the tool and definitely found varying results, some even got stuck in loops. `v3-turbo-q5` ended up giving me the best results. Some were just pretty bad imo
+I got to test a few different models that you could download that works with the tool and definitely found varying results, some even got stuck in loops. v3-turbo-q5 ended up giving me the best results. Some were just pretty bad imo
 
 I then tried to get a summary from the transcript and try get some tasks out of it. But I soon realised the quality was pretty bad too and unusable, and missed some pretty important points. Not to the mention the added complexity of Samoan language used throughout the recording.
 
@@ -62,13 +68,11 @@ In this case I came to the conclusion - back to reference the "where does the ri
 
 No one actually goes back to listen to the whole 1 hour meeting or want to read through a full wall of text.
 
-Sure AI can summarise but how do I in the moment say ok at 22minutes 33 seconds take mark this task down as it's important. I may as well just use my pen and take it down right there and then.
-
-> **Intentional.**
+Sure AI can summarise but how do I in the moment say ok at 22minutes 33 seconds take mark this task down as it's important. I may as well just use my pen and take it down right there and then. Intentional.
 
 Putting intention to actively listen and scribe is a skill in its self, and putting effort and rigor in to making sure important actions are captured is waaaay better than letting AI improvise that. Maybe im a few prompts away from finding the perfect product for my use case - maybe I have to build this myself? Maybe you?
 
-**But to sum up: I think I made a good decision as I can still be intentional, which is where the rigor is. And yes its more effort, but without effort how can you expect to get better and grow in whatever your role is.**
+But to sum up, I think I made a good decision as I can still be intentional, which is where the rigor is. And yes its more effort, but without effort how can you expect to get better and grow in whatever your role is.
 
 In a world full of generated content, I really do hope genuine content becomes higher impact and accessible. And if you feel you want more raw authentic content please leave a comment, share and follow along the journey.
 
