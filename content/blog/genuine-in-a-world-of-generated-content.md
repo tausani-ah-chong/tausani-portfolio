@@ -1,6 +1,6 @@
 ---
 title: Genuine in a World of Generated Content
-date: March 4, 2026
+date: March 5, 2026
 tags: Personal, AI
 ---
 
