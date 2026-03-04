@@ -4,7 +4,7 @@ date: March 4, 2026
 tags: Personal, AI
 ---
 
-Ok I kind of lied to you in my previous post and I apologise
+Ok I kind of lied to you in my [previous post](/blog/tdd-or-just-tests) and I apologise
 
 So I thought you know writing these posts would be a breeze now because there are many AI tools to help you write, (even before we had grammarly)
 
@@ -28,7 +28,7 @@ The main tasks are to schedule meetings, and take minutes during those minutes. 
 
 So I thought what about using an AI tool that runs on my local machine and never talks to third party servers.
 
-I researched and ended up finding a Whisper port, based off the O\*\*\*AI (The company who should not be named iykyk) model but ported to C++ for better performance. Did a couple manual tests beforehand with random audio and thought I would try it with a real meeting. So before our meeting, I asked for permission first if I could record and feed into my local AI tool. I then dumped the 1 hour .wav file into the tool and let it do its thing.
+I researched and ended up finding a [Whisper port](https://github.com/ggerganov/whisper.cpp), based off the O\*\*\*AI (The company who should not be named iykyk) model but ported to C++ for better performance. Did a couple manual tests beforehand with random audio and thought I would try it with a real meeting. So before our meeting, I asked for permission first if I could record and feed into my local AI tool. I then dumped the 1 hour .wav file into the tool and let it do its thing.
 
 I got to test a few different models that you could download that works with the tool and definitely found varying results, some even got stuck in loops. v3-turbo-q5 ended up giving me the best results. Some were just pretty bad imo
 
@@ -36,7 +36,7 @@ I then tried to get a summary from the transcript and try get some tasks out of 
 
 I could tell off the bat the performance and quality gains are definitely with paid models but you have to live by their rules of stealing and using your data to train etc say bye to your privacy. This exercise got me to question do we really need to use AI for everything? Should you really just offload all tasks for AI improvise?
 
-In this case I came to the conclusion - back to reference the "where does the rigor go?" from my previous post here - that it was a lot more accurate and critical if I actually took the effort to decide what and what shouldn't be taken down as minutes.
+In this case I came to the conclusion - back to reference the "where does the rigor go?" from my [previous post](/blog/tdd-or-just-tests) here - that it was a lot more accurate and critical if I actually took the effort to decide what and what shouldn't be taken down as minutes.
 
 No one actually goes back to listen to the whole 1 hour meeting or want to read through a full wall of text.
 
