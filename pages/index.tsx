@@ -6,8 +6,7 @@ import Blog from './blog'
 import Projects from './projects'
 
 function App(): JSX.Element {
-	// Not showing projects until complete
-	const showProjects = false
+	const showProjects = true
 
 	return (
 		<>
