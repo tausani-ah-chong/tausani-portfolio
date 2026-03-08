@@ -17,8 +17,8 @@ const Projects: FunctionComponent = () => (
 						BeatRizz
 					</a>
 					<p className="text-base">
-						For the culture — tap drum pads over curated hip-hop hits or paste your own YouTube
-						playlist. Swipe to switch tracks.
+						For the culture — tap drum pads over curated tracks or paste your own YouTube playlist.
+						Swipe to switch tracks.
 					</p>
 				</li>
 			</ul>
