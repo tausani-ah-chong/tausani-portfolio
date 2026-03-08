@@ -13,13 +13,12 @@ const Projects: FunctionComponent = () => (
 		<div>
 			<ul className="py-2 list-disc">
 				<li className="py-2 text-lg">
-					<a className="hover:underline py-2 font-bold" href="/tools/live-drumz/">
-						live-drumz
+					<a className="hover:underline py-2 font-bold" href="/tools/beat-rizz/">
+						BeatRizz
 					</a>
 					<p className="text-base">
-						For the culture - A mobile-first drum machine that layers virtual drum pads over any
-						YouTube playlist. Swipe to change track, tap pads to play - built with zero
-						dependencies.
+						For the culture — tap drum pads over curated hip-hop hits or paste your own YouTube
+						playlist. Swipe to switch tracks.
 					</p>
 				</li>
 			</ul>

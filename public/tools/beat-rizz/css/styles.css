@@ -78,24 +78,16 @@ body.force-landscape {
   letter-spacing: 0.04em;
 }
 
-.start-word-live {
+.start-word-beat {
   font-size: clamp(2rem, 8vw, 3.5rem);
   font-weight: 200;
   color: rgba(255, 255, 255, 0.5);
-  text-transform: lowercase;
 }
 
-.start-word-sep {
-  font-size: clamp(1.5rem, 6vw, 2.8rem);
-  font-weight: 100;
-  color: rgba(255, 255, 255, 0.25);
-}
-
-.start-word-drumz {
+.start-word-rizz {
   font-size: clamp(2rem, 8vw, 3.5rem);
   font-weight: 800;
   color: #fff;
-  text-transform: lowercase;
   letter-spacing: -0.02em;
 }
 
