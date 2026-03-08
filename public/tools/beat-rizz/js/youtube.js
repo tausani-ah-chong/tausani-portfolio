@@ -24,7 +24,10 @@ function buildPlayer(extraVars, videoId) {
   const opts = {
     playerVars: { ...BASE_VARS, ...extraVars },
     events: {
-      onReady(event) { event.target.playVideo(); },
+      onReady(event) {
+        event.target.setPlaybackQuality('hd1080');
+        event.target.playVideo();
+      },
       onStateChange,
     },
   };
