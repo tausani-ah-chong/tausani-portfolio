@@ -1,10 +1,10 @@
 import { playSound } from './audio/synth.js';
 
 const KEY_MAP = {
-  q: 'kick',
-  w: 'clap',
-  e: 'snare',
-  r: 'hihat',
+  d: 'kick',
+  f: 'clap',
+  j: 'snare',
+  k: 'hihat',
 };
 
 function triggerPad(el) {
