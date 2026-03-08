@@ -46,6 +46,7 @@ function submitUrl() {
   if (ok) {
     ytInput.value = '';
     closeLoadPanel();
+    dismissSwipeHint();
   } else {
     ytError.hidden = false;
   }
@@ -80,6 +81,7 @@ function dismissSwipeHint() {
 
 function commitSwipe(dir) {
   dismissSwipeHint();
+  closeLoadPanel();
 
   const vh = window.innerHeight;
   const outY = dir === 'next' ? -vh : vh;
