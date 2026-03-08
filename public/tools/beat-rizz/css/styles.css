@@ -1,0 +1,400 @@
+/* ─── Orientation toggle (top-left) ───────────────────────── */
+
+#btn-orientation {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 60;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.7);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition: background 0.15s, color 0.15s;
+}
+
+#btn-orientation:active {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+/* In force-landscape the physical bottom (home indicator) becomes logical right,
+   and the physical top (notch) becomes logical left — compensate with safe areas.
+   Fallbacks ensure clearance even if env() returns 0 (CSS-rotation trick). */
+body.force-landscape #transport {
+  right: max(50px, calc(env(safe-area-inset-bottom, 34px) + 16px));
+}
+
+body.force-landscape #btn-orientation {
+  left: max(16px, calc(env(safe-area-inset-top, 50px) + 16px));
+}
+
+/* Force-landscape: rotate entire page 90° for portrait-mode users */
+body.force-landscape {
+  position: fixed;
+  width: 100vh;
+  height: 100vw;
+  top: calc((100vh - 100vw) / 2);
+  left: calc((100vw - 100vh) / 2);
+  transform: rotate(90deg);
+  transform-origin: center;
+  overflow: hidden;
+}
+
+/* ─── Start overlay ───────────────────────────────────────── */
+
+#start-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: opacity 0.4s ease;
+}
+
+.start-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.start-wordmark {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  letter-spacing: 0.04em;
+}
+
+.start-word-beat {
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  font-weight: 200;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.start-word-rizz {
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+/* Tap button */
+.start-tap-btn {
+  position: relative;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  padding: 16px 40px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.start-tap-ring {
+  position: absolute;
+  inset: -1px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: tap-ring 2.2s ease-out infinite;
+  pointer-events: none;
+}
+
+@keyframes tap-ring {
+  0%   { transform: scale(1);    opacity: 0.5; }
+  70%  { transform: scale(1.18); opacity: 0; }
+  100% { transform: scale(1.18); opacity: 0; }
+}
+
+.start-tap-text {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  position: relative;
+}
+
+.start-tap-btn:active .start-tap-text {
+  color: #fff;
+}
+
+.start-hint {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  animation: fade-up 0.8s ease 0.4s both;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Swipe hint (one-time, shown after start) ────────────── */
+
+#swipe-hint {
+  position: fixed;
+  inset: 0;
+  z-index: 8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+#swipe-hint.visible { opacity: 1; }
+
+.swipe-hint-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 80px; /* lift above pad grid */
+}
+
+.swipe-arrow {
+  animation: swipe-bounce 1.6s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px rgba(255,255,255,0.3));
+}
+
+@keyframes swipe-bounce {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50%       { transform: translateY(-14px); opacity: 0.7; }
+}
+
+.swipe-hint-text {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ─── Video ───────────────────────────────────────────────── */
+
+/* Transparent layer that sits above the cross-origin YouTube iframe.
+   Captures all touch/pointer events so the iframe can never steal them. */
+#video-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  touch-action: none; /* tell the browser we own all gestures here */
+}
+
+#video-container {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+#yt-player {
+  width: 100%;
+  height: 100%;
+}
+
+#yt-player iframe {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border: none;
+  display: block;
+}
+
+/* ─── Transport (top-right, transparent) ─────────────────── */
+
+#transport {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#transport button {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.7);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+#transport button:hover,
+#transport button:active {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+/* Play icon hidden by default (shows when paused) */
+#btn-play-pause .icon-play { display: none; }
+
+#btn-load.load-active {
+  color: #a5d6a7;
+  border-color: rgba(165, 214, 167, 0.6);
+  background: rgba(165, 214, 167, 0.1);
+}
+
+/* ─── YouTube URL load panel ──────────────────────────────── */
+
+#yt-load-panel {
+  position: fixed;
+  top: 64px;
+  right: 16px;
+  z-index: 25;
+  width: min(320px, calc(100vw - 32px));
+  background: rgba(0, 0, 0, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+#yt-load-panel[hidden] { display: none; }
+
+.yt-load-label {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.yt-load-row {
+  display: flex;
+  gap: 8px;
+}
+
+#yt-url-input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.82rem;
+  padding: 9px 11px;
+  outline: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  min-width: 0;
+}
+
+#yt-url-input::placeholder { color: rgba(255, 255, 255, 0.25); }
+#yt-url-input:focus { border-color: rgba(165, 214, 167, 0.6); }
+
+#yt-url-go {
+  background: rgba(165, 214, 167, 0.15);
+  border: 1px solid rgba(165, 214, 167, 0.5);
+  border-radius: 8px;
+  color: #a5d6a7;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 9px 14px;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+#yt-url-go:active { background: rgba(165, 214, 167, 0.3); }
+
+.yt-load-error {
+  color: rgba(255, 100, 100, 0.9);
+  font-size: 0.72rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.yt-load-error[hidden] { display: none; }
+
+/* ─── Pad grid (bottom center) ────────────────────────────── */
+
+#pad-grid {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+/* ─── Individual pads ─────────────────────────────────────── */
+
+.pad {
+  width: 18vw;
+  height: 18vw;
+  max-width: 130px;
+  max-height: 130px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.18);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition: transform 0.06s ease, background 0.06s ease, box-shadow 0.06s ease, border-color 0.06s ease;
+}
+
+/* Distinct tints per voice */
+.pad[data-sound="kick"]  { border-color: rgba(255, 80,  80,  0.7); background: rgba(255, 80,  80,  0.2); }
+.pad[data-sound="snare"] { border-color: rgba(255, 160, 60,  0.7); background: rgba(255, 160, 60,  0.2); }
+.pad[data-sound="hihat"] { border-color: rgba(255, 220, 60,  0.7); background: rgba(255, 220, 60,  0.2); }
+.pad[data-sound="clap"]  { border-color: rgba(180, 100, 255, 0.7); background: rgba(180, 100, 255, 0.2); }
+
+/* Hit state */
+.pad[data-sound="kick"].pad--active  {
+  background: rgba(255, 70,  70,  0.9);
+  border-color: #ff4646;
+  box-shadow: 0 0 32px rgba(255, 70, 70, 0.8);
+  transform: scale(0.91);
+}
+.pad[data-sound="snare"].pad--active {
+  background: rgba(255, 150, 50,  0.9);
+  border-color: #ff9632;
+  box-shadow: 0 0 32px rgba(255, 150, 50, 0.8);
+  transform: scale(0.91);
+}
+.pad[data-sound="hihat"].pad--active {
+  background: rgba(240, 210, 50,  0.9);
+  border-color: #f0d232;
+  box-shadow: 0 0 32px rgba(240, 210, 50, 0.8);
+  transform: scale(0.91);
+}
+.pad[data-sound="clap"].pad--active  {
+  background: rgba(170, 90,  255, 0.9);
+  border-color: #aa5aff;
+  box-shadow: 0 0 32px rgba(170, 90, 255, 0.8);
+  transform: scale(0.91);
+}
