@@ -17,8 +17,9 @@ const Projects: FunctionComponent = () => (
 						live-drumz
 					</a>
 					<p className="text-base">
-						A mobile-first drum machine that layers Web Audio API drum pads over any YouTube
-						playlist. Swipe to change track, tap pads to play — built with zero dependencies.
+						For the culture - A mobile-first drum machine that layers virtual drum pads over any
+						YouTube playlist. Swipe to change track, tap pads to play - built with zero
+						dependencies.
 					</p>
 				</li>
 			</ul>
