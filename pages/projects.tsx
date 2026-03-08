@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { FunctionComponent } from 'react'
 
 const Projects: FunctionComponent = () => (
@@ -14,9 +13,9 @@ const Projects: FunctionComponent = () => (
 		<div>
 			<ul className="py-2 list-disc">
 				<li className="py-2 text-lg">
-					<Link className="hover:underline py-2 font-bold" href="/tools/live-drumz">
+					<a className="hover:underline py-2 font-bold" href="/tools/live-drumz/">
 						live-drumz
-					</Link>
+					</a>
 					<p className="text-base">
 						A mobile-first drum machine that layers Web Audio API drum pads over any YouTube
 						playlist. Swipe to change track, tap pads to play — built with zero dependencies.
