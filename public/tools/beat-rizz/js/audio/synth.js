@@ -28,9 +28,18 @@ const buffers = {};
 
 export async function prerender() {
   const ctx = getContext();
-  const names = ['kick', 'snare', 'hihat', 'clap'];
-  await Promise.all(names.map(async (name) => {
-    const res = await fetch(`sounds/${name}.wav`);
+  const sounds = {
+    kick: 'kick.wav',
+    snare: 'snare.wav',
+    hihat: 'hihat.wav',
+    clap: 'clap.wav',
+    fahhhhhhhhhhhhhh: 'fahhhhhhhhhhhhhh.mp3',
+    ack: 'ack.mp3',
+    thud: 'thud.mp3',
+    applepay: 'applepay.mp3',
+  };
+  await Promise.all(Object.entries(sounds).map(async ([name, file]) => {
+    const res = await fetch(`sounds/${file}`);
     const arrayBuffer = await res.arrayBuffer();
     buffers[name] = await ctx.decodeAudioData(arrayBuffer);
   }));
