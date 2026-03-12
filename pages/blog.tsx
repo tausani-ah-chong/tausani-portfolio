@@ -20,6 +20,18 @@ const Blog: FunctionComponent = () => {
 						<li className="py-2 text-lg">
 							<Link
 								className="hover:underline py-2 font-bold"
+								href="/blog/the-model-just-wants-to-use-tools"
+							>
+								The Model Just Wants to Use Tools
+							</Link>
+							<p className="text-base">
+								Building the Faalupega CLI — a tool for Samoan chiefly honourifics, inspired by
+								what&apos;s under the hood of Claude Code.
+							</p>
+						</li>
+						<li className="py-2 text-lg">
+							<Link
+								className="hover:underline py-2 font-bold"
 								href="/blog/genuine-in-a-world-of-generated-content"
 							>
 								Genuine in a World of Generated Content
