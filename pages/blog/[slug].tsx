@@ -21,6 +21,7 @@ const tagColors: Record<string, string> = {
 	ChatGPT: 'bg-green-100 text-green-700',
 	Personal: 'bg-blue-100 text-blue-700',
 	Career: 'bg-amber-100 text-amber-700',
+	Faasamoa: 'bg-teal-100 text-teal-700',
 }
 
 const defaultTagColor = 'bg-gray-100 text-gray-700'
