@@ -44,7 +44,7 @@ Which led me to thinking ok, let's put this into practice - what tool should I b
 
 So you're probably on one of 2 sides. One side you're probably like what is that? And the other side you're like 😬 ooh um are you tackling that?
 
-**What is Faalupega?** It is probably one of the most important records to Samoa apart from the Bible itself. These are records of Samoan chiefly honourifics grouped by village called *O Le Tusi Faalupega o Samoa* or just a Faalupega. Before any records were written (before Samoan was a written language) it was all oral and passed down through generations and is still practiced to this day by master Orators, or we call Tulafale.
+**What is Faalupega?** It is probably one of the most important records to Samoa. These are records of Samoan chiefly honourifics grouped by village called *O Le Tusi Faalupega o Samoa* or just a Faalupega. Before any records were written (before Samoan was a written language) it was all oral and passed down through generations and is still practiced to this day by master Orators, or we call Tulafale.
 
 There are over 150 villages across Samoa and each with their set of Matai chiefly titles - so we need an easy way to search across villages and matai title names.
 
