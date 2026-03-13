@@ -25,8 +25,8 @@ const Blog: FunctionComponent = () => {
 								The Model Just Wants to Use Tools
 							</Link>
 							<p className="text-base">
-								Building the Faalupega CLI — a tool for Samoan chiefly honourifics, inspired by
-								what&apos;s under the hood of Claude Code.
+								Building the Faalupega CLI - a tool for Samoan chiefly honourifics, inspired by my
+								my own struggles with research and the need for tooling for AI agents.
 							</p>
 						</li>
 						<li className="py-2 text-lg">
