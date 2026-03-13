@@ -184,7 +184,9 @@ $ faalupega matai ale
 
 **--help command:**
 
-```
+```text
+$ faalupega --help
+
 Usage: faalupega [options] [command]
 
 Samoan Faalupega Lookup Tool
@@ -237,7 +239,7 @@ There is a command that should be run when you first download it called `setup` 
 
 **Setup command:**
 
-```
+```text
 $ faalupega setup
 ```
 
