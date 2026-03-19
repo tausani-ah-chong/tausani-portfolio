@@ -14,21 +14,10 @@ import { join, resolve } from 'path'
 const cliDir = resolve(process.argv[2] || '../faalupega-cli')
 const snapshotPath = resolve('public/tools/faalupega/fs-snapshot.json')
 
-// Runtime deps only (transitive deps of @inquirer/select + commander)
-const RUNTIME_PACKAGES = [
-	'@inquirer/ansi',
-	'@inquirer/core',
-	'@inquirer/figures',
-	'@inquirer/select',
-	'@inquirer/type',
-	'cli-width',
-	'commander',
-	'fast-wrap-ansi',
-	'fast-string-truncated-width',
-	'fast-string-width',
-	'mute-stream',
-	'signal-exit',
-]
+// Runtime deps only — commander is the only one needed since we strip
+// @inquirer/select usage from setup.js (it uses node:async_hooks and
+// node:util styleText which WebContainers don't fully support on mobile)
+const RUNTIME_PACKAGES = ['commander']
 
 function walkDir(dirPath) {
 	const tree = {}
@@ -86,6 +75,34 @@ for (const pkg of RUNTIME_PACKAGES) {
 }
 
 snapshot['node_modules'] = { directory: nodeModulesTree }
+
+// Patch setup.js to remove @inquirer/select dependency.
+// WebContainers on mobile don't fully support node:async_hooks and
+// node:util styleText, which @inquirer/select requires.
+// Replace with a banner-only version that doesn't need any @inquirer packages.
+const commands = snapshot.dist.directory.src.directory.commands.directory
+
+commands['setup.js'].file.contents = `import { Command } from "commander";
+import { printBanner } from "../format.js";
+export const setupCommand = new Command("setup")
+    .description("Display the faalupega welcome banner.")
+    .action(() => {
+    printBanner();
+    console.log("  Samoan Faalupega Lookup Tool — v0.1.0");
+    console.log("  Try: village Puipaa, matai Seiuli, --help\\n");
+});
+`
+console.log('  Patched: setup.js (removed @inquirer/select)')
+
+commands['set-version.js'].file.contents = `import { Command } from "commander";
+export const setVersionCommand = new Command("set-version")
+    .description("Set the default faalupega version (not available in browser).")
+    .action(() => {
+    console.log("Version selection is not available in the browser tool.");
+    console.log("The default version (1930) is used.");
+});
+`
+console.log('  Patched: set-version.js (removed @inquirer/select)')
 
 const output = JSON.stringify(snapshot, null, 2)
 writeFileSync(snapshotPath, output)
