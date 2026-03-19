@@ -40,6 +40,21 @@ html, body {
   color: #e0e0e0;
 }
 
+/* Block-art banner — responsive via viewport-width font size */
+#banner {
+  margin: 0;
+  padding: 12px 8px 0;
+  background: #1a1a2e;
+  color: rgb(46, 92, 255);
+  font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+  font-weight: 700;
+  font-size: min(1.25vw, 14px);
+  line-height: 1.15;
+  white-space: pre;
+  overflow: hidden;
+  text-align: center;
+}
+
 #status {
   display: flex;
   align-items: center;
@@ -61,7 +76,7 @@ html, body {
   flex: 1;
   padding: 8px;
   display: none;
-  height: calc(100vh - 96px);
+  min-height: 0;
 }
 
 #terminal.visible {
