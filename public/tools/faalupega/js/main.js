@@ -64,16 +64,18 @@ async function spawnCommand(args) {
 				terminal.write(chunk)
 			},
 		})
-	)
+	).catch(() => {})
 
 	const writer = proc.input.getWriter()
 	const onData = terminal.onData((data) => {
-		writer.write(data)
+		writer.write(data).catch(() => {})
 	})
 
-	const exitCode = await proc.exit
-	onData.dispose()
-	return exitCode
+	try {
+		return await proc.exit
+	} finally {
+		onData.dispose()
+	}
 }
 
 function submitCommand(argsString) {
