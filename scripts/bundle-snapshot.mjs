@@ -16,7 +16,9 @@ const snapshotPath = resolve('public/tools/faalupega/fs-snapshot.json')
 
 // Runtime deps only (transitive deps of @inquirer/select + commander)
 const RUNTIME_PACKAGES = [
+	'@inquirer/ansi',
 	'@inquirer/core',
+	'@inquirer/figures',
 	'@inquirer/select',
 	'@inquirer/type',
 	'cli-width',
