@@ -76,6 +76,12 @@ for (const pkg of RUNTIME_PACKAGES) {
 
 snapshot['node_modules'] = { directory: nodeModulesTree }
 
+// Re-read the entire dist/ tree from the CLI source so any code changes
+// (e.g. new village data, bug fixes) are always reflected in the snapshot.
+const distPath = join(cliDir, 'dist')
+console.log(`\nRefreshing dist/ from ${distPath}`)
+snapshot['dist'] = { directory: walkDir(distPath) }
+
 // Patch setup.js to remove @inquirer/select dependency.
 // WebContainers on mobile don't fully support node:async_hooks and
 // node:util styleText, which @inquirer/select requires.
@@ -103,17 +109,6 @@ export const setVersionCommand = new Command("set-version")
 });
 `
 console.log('  Patched: set-version.js (removed @inquirer/select)')
-
-// Restore format.js from the CLI source to ensure the original block-art
-// banner is preserved (previous runs may have patched it).
-const formatSrc = join(cliDir, 'dist', 'src', 'format.js')
-try {
-	const formatContents = readFileSync(formatSrc, 'utf-8')
-	snapshot.dist.directory.src.directory['format.js'].file.contents = formatContents
-	console.log('  Restored: format.js (original block-art banner)')
-} catch {
-	console.warn('  WARN: Could not restore format.js from CLI source')
-}
 
 const output = JSON.stringify(snapshot, null, 2)
 writeFileSync(snapshotPath, output)
