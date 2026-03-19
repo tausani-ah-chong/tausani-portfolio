@@ -5,10 +5,12 @@ import { FitAddon } from 'https://esm.sh/@xterm/addon-fit@0.10.0'
 const statusEl = document.getElementById('status')
 const statusText = document.getElementById('status-text')
 const terminalEl = document.getElementById('terminal')
+const quickCommandsEl = document.getElementById('quick-commands')
 
 let wc = null
 let terminal = null
 let fitAddon = null
+let resolveReadLine = null
 
 function setStatus(msg) {
 	statusText.textContent = msg
@@ -24,6 +26,12 @@ function showError(msg) {
 	statusEl.classList.add('hidden')
 	terminalEl.classList.add('visible')
 	terminal.writeln('\x1b[31m' + msg + '\x1b[0m')
+}
+
+function setQuickCommandsVisible(visible) {
+	if (quickCommandsEl) {
+		quickCommandsEl.classList.toggle('visible', visible)
+	}
 }
 
 function initTerminal() {
@@ -68,8 +76,16 @@ async function spawnCommand(args) {
 	return exitCode
 }
 
+function submitCommand(argsString) {
+	if (!resolveReadLine) return
+	terminal.write(argsString)
+	terminal.writeln('')
+	const resolve = resolveReadLine
+	resolveReadLine = null
+	resolve(argsString)
+}
+
 async function runShell() {
-	// After initial command, provide a simple prompt loop
 	while (true) {
 		terminal.writeln('')
 		terminal.writeln(
@@ -77,7 +93,10 @@ async function runShell() {
 		)
 		terminal.write('\x1b[1m$ faalupega \x1b[0m')
 
+		setQuickCommandsVisible(true)
 		const input = await readLine()
+		setQuickCommandsVisible(false)
+
 		const args = input.trim().split(/\s+/).filter(Boolean)
 
 		if (args.length === 0) continue
@@ -93,10 +112,16 @@ async function runShell() {
 function readLine() {
 	return new Promise((resolve) => {
 		let buffer = ''
+		resolveReadLine = (value) => {
+			onData.dispose()
+			resolveReadLine = null
+			resolve(value)
+		}
 		const onData = terminal.onData((data) => {
 			if (data === '\r' || data === '\n') {
 				terminal.writeln('')
 				onData.dispose()
+				resolveReadLine = null
 				resolve(buffer)
 			} else if (data === '\x7f' || data === '\b') {
 				if (buffer.length > 0) {
@@ -111,6 +136,15 @@ function readLine() {
 	})
 }
 
+function initQuickCommands() {
+	if (!quickCommandsEl) return
+	quickCommandsEl.addEventListener('click', (e) => {
+		const btn = e.target.closest('button[data-args]')
+		if (!btn) return
+		submitCommand(btn.dataset.args)
+	})
+}
+
 async function boot() {
 	if (typeof SharedArrayBuffer === 'undefined') {
 		showError(
@@ -120,6 +154,7 @@ async function boot() {
 	}
 
 	initTerminal()
+	initQuickCommands()
 
 	try {
 		setStatus('Booting WebContainer...')
@@ -129,29 +164,11 @@ async function boot() {
 		const snapshot = await fetch('fs-snapshot.json').then((r) => r.json())
 		await wc.mount(snapshot)
 
-		setStatus('Installing dependencies...')
 		showTerminal()
-		terminal.writeln('Installing dependencies...\n')
+		terminal.writeln('\x1b[32mReady!\x1b[0m\n')
 
-		const install = await wc.spawn('npm', ['install'])
-		install.output.pipeTo(
-			new WritableStream({
-				write(chunk) {
-					terminal.write(chunk)
-				},
-			})
-		)
-
-		const installExitCode = await install.exit
-		if (installExitCode !== 0) {
-			terminal.writeln('\n\x1b[31mnpm install failed.\x1b[0m')
-			return
-		}
-
-		terminal.writeln('\n\x1b[32mReady!\x1b[0m')
-
-		// Run help first to show available commands
-		await spawnCommand(['--help']).catch(() => {})
+		// Run setup first to show the faalupega banner
+		await spawnCommand(['setup']).catch(() => {})
 
 		// Enter interactive loop
 		await runShell()

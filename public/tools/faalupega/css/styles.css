@@ -86,3 +86,62 @@ html, body {
   margin: 0 auto;
   line-height: 1.6;
 }
+
+/* Quick-command buttons */
+#quick-commands {
+  display: none;
+  gap: 12px;
+  padding: 10px 16px;
+  background: #16213e;
+  border-top: 1px solid #0f3460;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+#quick-commands.visible {
+  display: flex;
+}
+
+#quick-commands .cmd-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+#quick-commands .cmd-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #5a6a8a;
+  padding-left: 4px;
+}
+
+#quick-commands .cmd-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+#quick-commands button {
+  padding: 6px 12px;
+  font-size: 13px;
+  font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+  color: #e0e0e0;
+  background: #1a1a2e;
+  border: 1px solid #e94560;
+  border-radius: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#quick-commands button:hover {
+  background: #e94560;
+  color: #fff;
+}
+
+#quick-commands button:active {
+  background: #c73550;
+  color: #fff;
+}
