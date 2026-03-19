@@ -11,6 +11,7 @@ let wc = null
 let terminal = null
 let fitAddon = null
 let resolveReadLine = null
+const BANNER_COLS = 105
 
 function setStatus(msg) {
 	statusText.textContent = msg
@@ -55,7 +56,24 @@ function initTerminal() {
 	})
 }
 
+function scaleToBanner() {
+	if (terminal.cols >= BANNER_COLS) return
+	const scale = terminal.cols / BANNER_COLS
+	terminalEl.style.transform = `scale(${scale})`
+	terminalEl.style.transformOrigin = 'top left'
+	terminalEl.style.width = `${100 / scale}%`
+}
+
+function unscaleBanner() {
+	terminalEl.style.transform = ''
+	terminalEl.style.transformOrigin = ''
+	terminalEl.style.width = ''
+}
+
 async function spawnCommand(args) {
+	const isSetup = args.length === 1 && args[0] === 'setup'
+	if (isSetup) scaleToBanner()
+
 	const proc = await wc.spawn('node', ['dist/bin/faalupega.js', ...args])
 
 	proc.output.pipeTo(
@@ -74,6 +92,7 @@ async function spawnCommand(args) {
 	try {
 		return await proc.exit
 	} finally {
+		if (isSetup) unscaleBanner()
 		onData.dispose()
 	}
 }

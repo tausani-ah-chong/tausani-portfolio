@@ -104,26 +104,16 @@ export const setVersionCommand = new Command("set-version")
 `
 console.log('  Patched: set-version.js (removed @inquirer/select)')
 
-// Patch printBanner in format.js with a compact text banner.
-// The original uses wide block-art (~65 cols per line) that wraps
-// into garbled blocks on mobile terminals (~40 cols).
-const formatJs = snapshot.dist.directory.src.directory['format.js']
-formatJs.file.contents = formatJs.file.contents.replace(
-	/export function printBanner\(\) \{[\s\S]*?\n\}/,
-	`export function printBanner() {
-    const b = "\\x1b[38;2;46;92;255m";
-    const bold = "\\x1b[1m";
-    const dim = "\\x1b[2m";
-    const r = "\\x1b[0m";
-    console.log("");
-    console.log("  " + b + bold + "O LE TUSI" + r);
-    console.log("  " + b + bold + "FAALUPEGA" + r);
-    console.log("  " + b + bold + "O SAMOA" + r);
-    console.log("  " + dim + "\\u2500".repeat(24) + r);
-    console.log("");
-}`
-)
-console.log('  Patched: printBanner (compact text, mobile-safe)')
+// Restore format.js from the CLI source to ensure the original block-art
+// banner is preserved (previous runs may have patched it).
+const formatSrc = join(cliDir, 'dist', 'src', 'format.js')
+try {
+	const formatContents = readFileSync(formatSrc, 'utf-8')
+	snapshot.dist.directory.src.directory['format.js'].file.contents = formatContents
+	console.log('  Restored: format.js (original block-art banner)')
+} catch {
+	console.warn('  WARN: Could not restore format.js from CLI source')
+}
 
 const output = JSON.stringify(snapshot, null, 2)
 writeFileSync(snapshotPath, output)
