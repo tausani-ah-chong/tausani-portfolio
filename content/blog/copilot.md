@@ -46,7 +46,7 @@ Which means you chat to it, if you like something then you copy and paste it to 
 
 My cmd+c, cmd+v has never been faster 😅 up until last week though 👀
 
-The contrast after playing with tools like Claude Code or Codex is carzy different.
+The contrast after playing with tools like Claude Code or Codex is crazy different.
 
 I wanted more out of M365 Copilot since the above tools aren't approved to use at work. 
 
