@@ -35,9 +35,9 @@ export default function BlogPost({ title, date, tags, content }: BlogPostProps):
 
 	const closeLightbox = useCallback(() => setLightboxSrc(null), [])
 
-	useEffect(() => {
+	useEffect((): void | (() => void) => {
 		if (!lightboxSrc) return
-		const handleKey = (e: KeyboardEvent) => {
+		const handleKey = (e: KeyboardEvent): void => {
 			if (e.key === 'Escape') closeLightbox()
 		}
 		document.addEventListener('keydown', handleKey)
@@ -97,12 +97,7 @@ export default function BlogPost({ title, date, tags, content }: BlogPostProps):
 				className="block w-full my-4 cursor-pointer bg-transparent border-0 p-0"
 				aria-label={`View full size: ${alt || 'image'}`}
 			>
-				<img
-					src={src}
-					alt={alt || ''}
-					className="rounded-lg w-full"
-					loading="lazy"
-				/>
+				<img src={src} alt={alt || ''} className="rounded-lg w-full" loading="lazy" />
 			</button>
 		),
 		strong: ({ children }: ChildrenProps) => <strong className="font-bold">{children}</strong>,
@@ -145,8 +140,12 @@ export default function BlogPost({ title, date, tags, content }: BlogPostProps):
 				<div
 					className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80"
 					onClick={closeLightbox}
-					role="dialog"
-					aria-label="Full size image"
+					onKeyDown={(e) => {
+						if (e.key === 'Escape') closeLightbox()
+					}}
+					role="button"
+					tabIndex={0}
+					aria-label="Close full size image"
 				>
 					<button
 						type="button"
@@ -156,7 +155,7 @@ export default function BlogPost({ title, date, tags, content }: BlogPostProps):
 					>
 						&times;
 					</button>
-					{/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
+					{/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/click-events-have-key-events */}
 					<img
 						src={lightboxSrc}
 						alt=""
