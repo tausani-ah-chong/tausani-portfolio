@@ -60,7 +60,7 @@ Let's take a look at what the current flow for any developer using M365 Copilot 
 
 As you can see, it is very simple and linear.
 
-User -> M365 Copilot -> copy + paste -> IDE
+**User -> M365 Copilot -> copy + paste -> IDE**
 
 Bruz you could even swap out M365 Copilot for Stack Overflow 🫣 See what I mean - it feels old school already.
 
@@ -76,13 +76,21 @@ So a couple new terms to get used to if you are not already familiar:
 
 ### Agent loop
 
-Nothing fancy, it's just a while-loop with an AI assistant. You start with a task, and the loop ends when the task is complete.
+Nothing fancy, it's just a while-loop with an AI assistant. 
+
+You start with a task, and the loop ends when the task is complete.
 
 ### Tool calling
 
 This part is fire 🔥
 
-You tell the AI assistant you have some tools they can use during the loop. Things like reading, editing, searching in files & running bash commands. All it has to do is respond by calling the tool of choice. The loop returns back to the AI assistant the output of these tools. From here an automated copy + paste loop is born.
+You tell the AI assistant you have some tools they can use during the loop. 
+
+Things like reading, editing, searching in files & running bash commands. 
+
+All it has to do is respond by calling the tool of choice. The loop returns back to the AI assistant the output of these tools. 
+
+From here an automated copy + paste loop is born.
 
 You will notice if you use Claude on the web you can pick the built-in tool to browse the web.
 
@@ -92,9 +100,11 @@ There's a reason they called something YOLO mode for coding agents. To give full
 
 Or you can sit in the driver's seat and approve tool calls, steering the ship.
 
-There are tradeoffs but it's better to lean on smart defaults. The loop will pause until human approval of tool calls.
+There are tradeoffs but it's better to lean on smart defaults. 
 
-### Example of a tool:
+The loop will pause until human approval of tool calls.
+
+### Example of my read_file tool:
 
 ![Example of a tool](/blog/copilot/example-tool.png)
 
@@ -158,7 +168,7 @@ My last ingredient...
 
 ...
 
-The ingredient was Playwright
+**The ingredient is [Playwright](https://playwright.dev)**
 
 ...
 
