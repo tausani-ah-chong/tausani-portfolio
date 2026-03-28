@@ -24,21 +24,31 @@ tags: AI, Career
 
 ******
 
-# Enterprise barriers? Hold my beer 🍺
-
 ## The constraint that I just couldn't shake
 
 No api. No cli. No agentic tooling.
 
 That's the reality of working with M365 Copilot.
 
-My cmd+c, cmd+v has never been faster 😅 up until last week though 👀👀
+The only access you have is through the web or native app.
+
+Which means you chat to it, if you like something then you copy and paste it to your IDE.
+
+My cmd+c, cmd+v has never been faster 😅 up until last week though 👀
+
+The contrast after playing with tools like Claude Code or Codex is carzy different.
+
+I wanted more out of M365 Copilot since the above tools aren't approved to use at work. 
+
+Ive been trying to find a way to do something similar that can run in your terminal.
 
 I finally cracked it.
 
-I don't even remember when the idea popped in my head and I went and tried it and yup this was ***"the last ingredient I needed to make this work"***
+I don't even remember when the idea popped in my head but I went and tried it and yup this was ***"the last ingredient I needed to make this work"***
 
-I'm very, very close to closing the loop and making M365 Copilot fully agentic.
+I've pretty much closed the loop im making M365 Copilot agentic.
+
+Meaning I run my application from my terminal, set a task, and away it goes reading and editing files until the task is complete.
 
 So yeah, I'm building a coding agent from scratch. And it's been the most fun with constant learning.
 
