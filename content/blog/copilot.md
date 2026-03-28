@@ -1,6 +1,6 @@
 ---
 title: Building a Coding Agent from Scratch
-date: March 28, 2026
+date: March 29, 2026
 tags: AI, Career
 ---
 
@@ -14,7 +14,7 @@ tags: AI, Career
 
 *👨‍👩‍👧‍👦 Proud dad of 2 kids*
 
-*📝 Post #5 - Posting every week until my birthday in April 🎂*
+*📝 Post #6 - Posting every week until my birthday in April 🎂*
 
 ******
 
@@ -24,7 +24,7 @@ tags: AI, Career
 
 ******
 
-Enterprise barriers? Hold my beer 🍺
+# Enterprise barriers? Hold my beer 🍺
 
 ## The constraint that I just couldn't shake
 
