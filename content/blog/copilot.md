@@ -24,6 +24,16 @@ tags: AI, Career
 
 ******
 
+**TLDR;**
+
+My company uses M365 Copilot, and for good reason, enterprise guardrails matter.
+
+But it has no API, no terminal access, no agentic tooling.
+
+So I built my own coding agent around it. And it works 🎉
+
+Here’s what I learned.
+
 ## The constraint that I just couldn't shake
 
 No api. No cli. No agentic tooling.
