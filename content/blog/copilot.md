@@ -106,7 +106,7 @@ You start with a task, and the loop ends when the task is complete.
 
 ### Tool calling
 
-This part is fire 🔥
+This part is 🔥
 
 You tell the AI assistant you have some tools they can use during the loop. 
 
@@ -150,7 +150,7 @@ For example, built into the api to call Claude models is a parameter for a list 
 
 ![Claude API example](/blog/copilot/claude-api-example.png)
 
-But because we are using "the last ingredient to make this work" we don't have an api to call.
+But because we are using ***"the last ingredient to make this work"*** we don't have an api to call.
 
 The limitation is that the only option we have is to send our list of tools as part of our system prompt.
 
