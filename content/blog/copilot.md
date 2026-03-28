@@ -52,7 +52,11 @@ Meaning I run my application from my terminal, set a task, and away it goes read
 
 So yeah, I'm building a coding agent from scratch. And it's been the most fun with constant learning.
 
+In this post, Im going to share with you a few learnings I think every software engineer should know about.
+
 I've already spent my small career learning to build apps, now it's time to learn to build the thing that builds the thing.
+
+
 
 Here it is in action:
 
