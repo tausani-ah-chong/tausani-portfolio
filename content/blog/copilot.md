@@ -36,7 +36,7 @@ My cmd+c, cmd+v has never been faster 😅 up until last week though 👀👀
 
 I finally cracked it.
 
-I don't even remember when the idea popped in my head and I went and tried it and yup this was "the last ingredient I needed to make this work"
+I don't even remember when the idea popped in my head and I went and tried it and yup this was ***"the last ingredient I needed to make this work"***
 
 I'm very, very close to closing the loop and making M365 Copilot fully agentic.
 
@@ -68,7 +68,7 @@ But hey it works, but we all know it can be a lot better. Read the room.
 
 ## Agentic development flow
 
-Below is where we introduce an agentic loop & "the last ingredient I needed to make this work". This is the very same foundation of tools like Claude Code & Codex:
+Below is where we introduce an agentic loop & ***"the last ingredient I needed to make this work"***. This is the very same foundation of tools like Claude Code & Codex:
 
 ![Agentic development flow](/blog/copilot/agentic.png)
 
