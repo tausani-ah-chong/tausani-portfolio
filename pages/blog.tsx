@@ -23,7 +23,7 @@ const Blog: FunctionComponent = () => {
 							</Link>
 							<p className="text-base">
 								No API. No CLI. No agentic tooling. How I cracked M365 Copilot&apos;s enterprise
-								barriers and built a fully agentic development flow using Playwright.
+								barriers and built a fully agentic development flow using a secret ingredient.
 							</p>
 						</li>
 						<li className="py-2 text-lg">
