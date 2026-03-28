@@ -18,6 +18,15 @@ const Blog: FunctionComponent = () => {
 				<div>
 					<ul className="py-2 list-disc">
 						<li className="py-2 text-lg">
+							<Link className="hover:underline py-2 font-bold" href="/blog/copilot">
+								Building a Coding Agent from Scratch
+							</Link>
+							<p className="text-base">
+								No API. No CLI. No agentic tooling. How I cracked M365 Copilot&apos;s enterprise
+								barriers and built a fully agentic development flow using Playwright.
+							</p>
+						</li>
+						<li className="py-2 text-lg">
 							<Link
 								className="hover:underline py-2 font-bold"
 								href="/blog/the-model-just-wants-to-use-tools"
