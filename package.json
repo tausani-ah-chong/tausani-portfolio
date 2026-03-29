@@ -41,7 +41,8 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "generate-rss": "node scripts/generate-rss.mjs",
+    "build": "npm run generate-rss && next build",
     "start": "next start",
     "test": "echo \"Error: no test specified\" && exit 1"
   }

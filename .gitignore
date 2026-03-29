@@ -89,6 +89,9 @@ dist
 # public
 .DS_Store
 
+# Generated RSS feed
+public/feed.xml
+
 # vuepress build output
 .vuepress/dist
 

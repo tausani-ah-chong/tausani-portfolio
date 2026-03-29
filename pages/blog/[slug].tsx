@@ -1,6 +1,4 @@
 /* eslint-disable react/display-name */
-import fs from 'fs'
-import path from 'path'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
@@ -8,6 +6,7 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import remarkBreaks from 'remark-breaks'
 import { ReactNode, useState, useEffect, useCallback } from 'react'
+import { getAllPosts, getPostBySlug } from '../../lib/blog'
 
 interface BlogPostProps {
 	title: string
@@ -109,9 +108,27 @@ export default function BlogPost({ title, date, tags, content }: BlogPostProps):
 				<title>{`${title} | Tausani`}</title>
 			</Head>
 			<main className="max-w-3xl mx-auto px-8 md:px-16 pt-10 pb-16 text-gray-700 font-sans">
-				<Link href="/" className="text-sm text-gray-500 hover:underline">
-					&larr; Back home
-				</Link>
+				<div className="flex items-center justify-between">
+					<Link href="/" className="text-sm text-gray-500 hover:underline">
+						&larr; Back home
+					</Link>
+					<a
+						href="/feed.xml"
+						className="flex items-center gap-1 text-xs text-orange-500 hover:text-orange-600 font-medium"
+						title="RSS Feed"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+							fill="currentColor"
+							className="w-3.5 h-3.5"
+						>
+							<circle cx="6.18" cy="17.82" r="2.18" />
+							<path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z" />
+						</svg>
+						RSS
+					</a>
+				</div>
 				<article className="mt-6">
 					<h1 className="text-3xl font-bold mb-1">{title}</h1>
 					<div className="flex flex-wrap items-center gap-3 mb-8">
@@ -169,33 +186,13 @@ export default function BlogPost({ title, date, tags, content }: BlogPostProps):
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-	const blogDir = path.join(process.cwd(), 'content/blog')
-	const files = fs.readdirSync(blogDir).filter((f) => f.endsWith('.md'))
-	const paths = files.map((f) => ({ params: { slug: f.replace('.md', '') } }))
+	const posts = getAllPosts()
+	const paths = posts.map((p) => ({ params: { slug: p.slug } }))
 	return { paths, fallback: false }
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
 	const slug = params?.slug as string
-	const filePath = path.join(process.cwd(), 'content/blog', `${slug}.md`)
-	const raw = fs.readFileSync(filePath, 'utf-8')
-
-	const frontmatterMatch = raw.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/)
-	let title = slug
-	let date = ''
-	let tags: string[] = []
-	let content = raw
-
-	if (frontmatterMatch) {
-		const frontmatter = frontmatterMatch[1]
-		content = frontmatterMatch[2]
-		const titleMatch = frontmatter.match(/^title:\s*"?(.+?)"?\s*$/m)
-		const dateMatch = frontmatter.match(/^date:\s*(.+)$/m)
-		const tagsMatch = frontmatter.match(/^tags:\s*(.+)$/m)
-		if (titleMatch) title = titleMatch[1]
-		if (dateMatch) date = dateMatch[1]
-		if (tagsMatch) tags = tagsMatch[1].split(',').map((t) => t.trim())
-	}
-
+	const { title, date, tags, content } = getPostBySlug(slug)
 	return { props: { title, date, tags, content } }
 }
