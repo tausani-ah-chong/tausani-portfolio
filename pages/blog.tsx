@@ -7,12 +7,21 @@ const Blog: FunctionComponent = () => {
 	return (
 		<div>
 			<div>
-				<p
-					className="font-bold text-sm text-gray-600"
-					style={{ textTransform: 'uppercase', letterSpacing: '0.15em' }}
-				>
-					Blog
-				</p>
+				<div className="flex items-center gap-3">
+					<p
+						className="font-bold text-sm text-gray-600"
+						style={{ textTransform: 'uppercase', letterSpacing: '0.15em' }}
+					>
+						Blog
+					</p>
+					<a
+						href="/feed.xml"
+						className="text-xs text-orange-500 hover:text-orange-600 font-medium"
+						title="RSS Feed"
+					>
+						RSS
+					</a>
+				</div>
 			</div>
 			{Show ? (
 				<div>

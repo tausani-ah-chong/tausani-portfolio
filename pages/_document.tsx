@@ -22,6 +22,12 @@ export default class MyDocument extends Document {
 							rel="stylesheet"
 						/>
 					</noscript>
+					<link
+						rel="alternate"
+						type="application/rss+xml"
+						title="Tausani Ah Chong - RSS Feed"
+						href="/feed.xml"
+					/>
 				</Head>
 				<body>
 					<Main />
