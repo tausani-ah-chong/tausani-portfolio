@@ -21,6 +21,7 @@
     "react": "18.2",
     "react-dom": "^18.2.0",
     "react-markdown": "^10.1.0",
+    "rehype-stringify": "^10.0.1",
     "remark-breaks": "^4.0.0",
     "remark-gfm": "^4.0.1",
     "typescript": "^5.9.3"
