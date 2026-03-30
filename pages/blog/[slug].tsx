@@ -167,19 +167,19 @@ export default function BlogPost({
 					</ReactMarkdown>
 				</article>
 				<nav className="mt-12 pt-8 border-t border-gray-200 flex justify-between">
-					{prevPost ? (
-						<Link href={`/blog/${prevPost.slug}`} className="text-sm text-gray-500 hover:underline">
-							&larr; {prevPost.title}
+					{nextPost ? (
+						<Link href={`/blog/${nextPost.slug}`} className="text-gray-600 hover:underline">
+							&larr; Next post
 						</Link>
 					) : (
 						<span />
 					)}
-					{nextPost ? (
+					{prevPost ? (
 						<Link
-							href={`/blog/${nextPost.slug}`}
-							className="text-sm text-gray-500 hover:underline text-right"
+							href={`/blog/${prevPost.slug}`}
+							className="text-gray-600 hover:underline text-right"
 						>
-							{nextPost.title} &rarr;
+							Previous post &rarr;
 						</Link>
 					) : (
 						<span />
