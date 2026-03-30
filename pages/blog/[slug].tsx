@@ -8,11 +8,18 @@ import remarkBreaks from 'remark-breaks'
 import { ReactNode, useState, useEffect, useCallback } from 'react'
 import { getAllPosts, getPostBySlug } from '../../lib/blog'
 
+interface AdjacentPost {
+	slug: string
+	title: string
+}
+
 interface BlogPostProps {
 	title: string
 	date: string
 	tags: string[]
 	content: string
+	prevPost: AdjacentPost | null
+	nextPost: AdjacentPost | null
 }
 
 const tagColors: Record<string, string> = {
@@ -29,7 +36,14 @@ interface ChildrenProps {
 	children?: ReactNode
 }
 
-export default function BlogPost({ title, date, tags, content }: BlogPostProps): JSX.Element {
+export default function BlogPost({
+	title,
+	date,
+	tags,
+	content,
+	prevPost,
+	nextPost,
+}: BlogPostProps): JSX.Element {
 	const [lightboxSrc, setLightboxSrc] = useState<string | null>(null)
 
 	const closeLightbox = useCallback(() => setLightboxSrc(null), [])
@@ -152,6 +166,28 @@ export default function BlogPost({ title, date, tags, content }: BlogPostProps):
 						{content}
 					</ReactMarkdown>
 				</article>
+				<nav className="mt-12 pt-8 border-t border-gray-200 flex justify-between">
+					{prevPost ? (
+						<Link
+							href={`/blog/${prevPost.slug}`}
+							className="text-sm text-gray-500 hover:underline"
+						>
+							&larr; {prevPost.title}
+						</Link>
+					) : (
+						<span />
+					)}
+					{nextPost ? (
+						<Link
+							href={`/blog/${nextPost.slug}`}
+							className="text-sm text-gray-500 hover:underline text-right"
+						>
+							{nextPost.title} &rarr;
+						</Link>
+					) : (
+						<span />
+					)}
+				</nav>
 			</main>
 			{lightboxSrc && (
 				<div
@@ -194,5 +230,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
 	const slug = params?.slug as string
 	const { title, date, tags, content } = getPostBySlug(slug)
-	return { props: { title, date, tags, content } }
+	const allPosts = getAllPosts()
+	const currentIndex = allPosts.findIndex((p) => p.slug === slug)
+	const prevPost =
+		currentIndex < allPosts.length - 1
+			? { slug: allPosts[currentIndex + 1].slug, title: allPosts[currentIndex + 1].title }
+			: null
+	const nextPost =
+		currentIndex > 0
+			? { slug: allPosts[currentIndex - 1].slug, title: allPosts[currentIndex - 1].title }
+			: null
+	return { props: { title, date, tags, content, prevPost, nextPost } }
 }
