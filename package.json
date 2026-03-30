@@ -43,6 +43,7 @@
   "scripts": {
     "dev": "next dev",
     "generate-rss": "node scripts/generate-rss.mjs",
+    "lint": "eslint --ext .ts,.tsx pages/ lib/",
     "build": "npm run generate-rss && next build",
     "start": "next start",
     "test": "echo \"Error: no test specified\" && exit 1"
