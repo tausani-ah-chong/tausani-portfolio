@@ -168,10 +168,7 @@ export default function BlogPost({
 				</article>
 				<nav className="mt-12 pt-8 border-t border-gray-200 flex justify-between">
 					{prevPost ? (
-						<Link
-							href={`/blog/${prevPost.slug}`}
-							className="text-sm text-gray-500 hover:underline"
-						>
+						<Link href={`/blog/${prevPost.slug}`} className="text-sm text-gray-500 hover:underline">
 							&larr; {prevPost.title}
 						</Link>
 					) : (
