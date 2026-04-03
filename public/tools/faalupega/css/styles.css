@@ -1,0 +1,162 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background: #1a1a2e;
+  color: #e0e0e0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow: hidden;
+}
+
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: #16213e;
+  border-bottom: 1px solid #0f3460;
+}
+
+#wordmark {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #e94560;
+}
+
+#site-link {
+  font-size: 13px;
+  color: #8892b0;
+  text-decoration: none;
+}
+
+#site-link:hover {
+  color: #e0e0e0;
+}
+
+/* Block-art banner — responsive via viewport-width font size */
+#banner {
+  margin: 0;
+  padding: 12px 8px 0;
+  background: #1a1a2e;
+  color: rgb(46, 92, 255);
+  font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+  font-weight: 700;
+  font-size: min(1.25vw, 14px);
+  line-height: 1.15;
+  white-space: pre;
+  overflow: hidden;
+  text-align: center;
+}
+
+#status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 20px;
+  background: #16213e;
+}
+
+#status.hidden {
+  display: none;
+}
+
+#status-text {
+  font-size: 14px;
+  color: #8892b0;
+}
+
+#terminal {
+  flex: 1;
+  padding: 8px;
+  display: none;
+  min-height: 0;
+}
+
+#terminal.visible {
+  display: block;
+}
+
+/* Error state */
+#error {
+  display: none;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+#error.visible {
+  display: block;
+}
+
+#error p {
+  font-size: 14px;
+  color: #e94560;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Quick-command buttons */
+#quick-commands {
+  display: none;
+  gap: 12px;
+  padding: 10px 16px;
+  background: #16213e;
+  border-top: 1px solid #0f3460;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+#quick-commands.visible {
+  display: flex;
+}
+
+#quick-commands .cmd-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+#quick-commands .cmd-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #5a6a8a;
+  padding-left: 4px;
+}
+
+#quick-commands .cmd-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+#quick-commands button {
+  padding: 6px 12px;
+  font-size: 13px;
+  font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+  color: #e0e0e0;
+  background: #1a1a2e;
+  border: 1px solid #e94560;
+  border-radius: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#quick-commands button:hover {
+  background: #e94560;
+  color: #fff;
+}
+
+#quick-commands button:active {
+  background: #c73550;
+  color: #fff;
+}

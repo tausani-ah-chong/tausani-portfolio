@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faalupega CLI</title>
+  <base href="/tools/faalupega/">
+  <link rel="stylesheet" href="https://esm.sh/@xterm/xterm@5.5.0/css/xterm.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body style="display:flex;flex-direction:column;">
+
+  <div id="header">
+    <span id="wordmark">Faalupega</span>
+    <a id="site-link" href="https://tausani.net" target="_blank" rel="noopener noreferrer">tausani.net</a>
+  </div>
+
+<pre id="banner">
+ ██████╗     ██╗     ███████╗    ████████╗██╗   ██╗███████╗██╗
+██╔═══██╗    ██║     ██╔════╝    ╚══██╔══╝██║   ██║██╔════╝██║
+██║   ██║    ██║     █████╗         ██║   ██║   ██║███████╗██║
+██║   ██║    ██║     ██╔══╝         ██║   ██║   ██║╚════██║██║
+╚██████╔╝    ███████╗███████╗       ██║   ╚██████╔╝███████║██║
+ ╚═════╝     ╚══════╝╚══════╝       ╚═╝    ╚═════╝ ╚══════╝╚═╝
+
+███████╗ █████╗  █████╗ ██╗     ██║   ██╗██████╗ ███████╗ ██████╗  █████╗
+██╔════╝██╔══██╗██╔══██╗██║     ██║   ██║██╔══██╗██╔════╝██╔════╝ ██╔══██╗
+█████╗  ███████║███████║██║     ██║   ██║██████╔╝█████╗  ██║  ███╗███████║
+██╔══╝  ██╔══██║██╔══██║██║     ██║   ██║██╔═══╝ ██╔══╝  ██║   ██║██╔══██║
+██║     ██║  ██║██║  ██║███████╗╚██████╔╝██║     ███████╗╚██████╔╝██║  ██║
+╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚═╝     ╚══════╝ ╚═════╝ ╚═╝  ╚═╝
+
+ ██████╗     ███████╗ █████╗ ███╗   ███╗ ██████╗  █████╗
+██╔═══██╗    ██╔════╝██╔══██╗████╗ ████║██╔═══██╗██╔══██╗
+██║   ██║    ███████╗███████║██╔████╔██║██║   ██║███████║
+██║   ██║    ╚════██║██╔══██║██║╚██╔╝██║██║   ██║██╔══██║
+╚██████╔╝    ███████║██║  ██║██║ ╚═╝ ██║╚██████╔╝██║  ██║
+ ╚═════╝     ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═╝
+</pre>
+
+  <div id="status">
+    <p id="status-text">Booting WebContainer...</p>
+  </div>
+
+  <div id="terminal"></div>
+
+  <div id="quick-commands">
+    <div class="cmd-group">
+      <span class="cmd-label">villages</span>
+      <div class="cmd-buttons">
+        <button data-args="village Puipaa">Puipaa</button>
+        <button data-args="village Tafua">Tafua</button>
+        <button data-args="village Salelologa">Salelologa</button>
+        <button data-args="village Safotulafai">Safotulafai</button>
+      </div>
+    </div>
+    <div class="cmd-group">
+      <span class="cmd-label">matai</span>
+      <div class="cmd-buttons">
+        <button data-args="matai Seiuli">Seiuli</button>
+        <button data-args="matai Fanene">Fanene</button>
+        <button data-args="matai Tofa">Tofa</button>
+      </div>
+    </div>
+    <div class="cmd-group">
+      <span class="cmd-label">utility</span>
+      <div class="cmd-buttons">
+        <button data-args="--help">--help</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
