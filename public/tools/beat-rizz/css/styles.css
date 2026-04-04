@@ -434,7 +434,18 @@ body.force-landscape {
 
 .yt-load-error[hidden] { display: none; }
 
-/* ─── Pad grid (bottom center) ────────────────────────────── */
+/* ─── Pad grids (bottom center) ───────────────────────────── */
+
+#sfx-grid {
+  position: fixed;
+  bottom: calc(64px + 18vw + 14px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
 
 #pad-grid {
   position: fixed;
@@ -445,6 +456,10 @@ body.force-landscape {
   display: flex;
   gap: 14px;
   align-items: center;
+}
+
+@media (min-width: 723px) {
+  #sfx-grid { bottom: calc(64px + 130px + 14px); }
 }
 
 /* ─── Individual pads ─────────────────────────────────────── */
@@ -493,5 +508,36 @@ body.force-landscape {
   background: rgba(170, 90,  255, 0.9);
   border-color: #aa5aff;
   box-shadow: 0 0 32px rgba(170, 90, 255, 0.8);
+  transform: scale(0.91);
+}
+
+/* ─── SFX pad tints ──────────────────────────────────────── */
+.pad[data-sound="fahhhhhhhhhhhhhh"] { border-color: rgba(0, 210, 200, 0.7); background: rgba(0, 210, 200, 0.2); }
+.pad[data-sound="ack"]             { border-color: rgba(80, 220, 100, 0.7); background: rgba(80, 220, 100, 0.2); }
+.pad[data-sound="thud"]            { border-color: rgba(255, 100, 180, 0.7); background: rgba(255, 100, 180, 0.2); }
+.pad[data-sound="applepay"]        { border-color: rgba(80, 160, 255, 0.7); background: rgba(80, 160, 255, 0.2); }
+
+.pad[data-sound="fahhhhhhhhhhhhhh"].pad--active {
+  background: rgba(0, 200, 190, 0.9);
+  border-color: #00c8be;
+  box-shadow: 0 0 32px rgba(0, 200, 190, 0.8);
+  transform: scale(0.91);
+}
+.pad[data-sound="ack"].pad--active {
+  background: rgba(70, 210, 90, 0.9);
+  border-color: #46d25a;
+  box-shadow: 0 0 32px rgba(70, 210, 90, 0.8);
+  transform: scale(0.91);
+}
+.pad[data-sound="thud"].pad--active {
+  background: rgba(245, 90, 170, 0.9);
+  border-color: #f55aaa;
+  box-shadow: 0 0 32px rgba(245, 90, 170, 0.8);
+  transform: scale(0.91);
+}
+.pad[data-sound="applepay"].pad--active {
+  background: rgba(70, 150, 245, 0.9);
+  border-color: #4696f5;
+  box-shadow: 0 0 32px rgba(70, 150, 245, 0.8);
   transform: scale(0.91);
 }
