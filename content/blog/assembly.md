@@ -23,6 +23,8 @@ TL:DR;
 Im learning assembly, and hit a few roadblocks trying to run programs on my M1, but got it running on my machine
 And you can too via my Warriors themed OS: https://hla.tausani.net
 
+![WahsOS home screen](/blog/assembly/home-screen.png)
+
 ******
 
 Is it still worth learning about how to write Assembly in 2026? Given the pace and advancement of AI coding agents these days, why should it matter?
