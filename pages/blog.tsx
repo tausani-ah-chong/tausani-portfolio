@@ -40,7 +40,7 @@ const Blog: FunctionComponent = () => {
 								Should You Learn Assembly in 2026?
 							</Link>
 							<p className="text-base">
-								Good like running HLA on M series macbooks. But don&apos;t worry I got you!
+								Good luck running HLA on M series macbooks. But don&apos;t worry I got you!
 							</p>
 						</li>
 						<li className="py-2 text-lg">
