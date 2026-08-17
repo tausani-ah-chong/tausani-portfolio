@@ -28,6 +28,10 @@ const tagColors: Record<string, string> = {
 	Personal: 'bg-blue-100 text-blue-700',
 	Career: 'bg-amber-100 text-amber-700',
 	Faasamoa: 'bg-teal-100 text-teal-700',
+	Assembly: 'bg-rose-100 text-rose-700',
+	Docker: 'bg-sky-100 text-sky-700',
+	Learning: 'bg-indigo-100 text-indigo-700',
+	Warriors: 'bg-indigo-100 text-indigo-700',
 }
 
 const defaultTagColor = 'bg-gray-100 text-gray-700'

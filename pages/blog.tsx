@@ -36,6 +36,14 @@ const Blog: FunctionComponent = () => {
 				<div>
 					<ul className="py-2 list-disc">
 						<li className="py-2 text-lg">
+							<Link className="hover:underline py-2 font-bold" href="/blog/assembly">
+								Should You Learn Assembly in 2026?
+							</Link>
+							<p className="text-base">
+								Good like running HLA on M series macbooks. But don&apos;t worry I got you!
+							</p>
+						</li>
+						<li className="py-2 text-lg">
 							<Link className="hover:underline py-2 font-bold" href="/blog/copilot">
 								Building a Coding Agent from Scratch
 							</Link>
