@@ -21,6 +21,15 @@ const Projects: FunctionComponent = () => (
 						Swipe to switch tracks.
 					</p>
 				</li>
+				<li className="py-2 text-lg">
+					<a className="hover:underline py-2 font-bold" href="/tools/faalupega/">
+						Faalupega CLI
+					</a>
+					<p className="text-base">
+						Explore Samoan faalupega (chiefly greetings) — search by village or matai title, right
+						in your browser.
+					</p>
+				</li>
 			</ul>
 		</div>
 	</section>
